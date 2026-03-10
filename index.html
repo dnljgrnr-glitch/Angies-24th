@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 Angie's 24th Birthday Takeover</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d14;
+  --surface: #13131e;
+  --surface2: #1a1a2a;
+  --border: rgba(255,255,255,0.07);
+  --text: #f0eee8;
+  --muted: rgba(240,238,232,0.45);
+  --accent: #f5c842;
+  --accent2: #e85c6a;
+  --accent3: #5b8df5;
+  --green: #42d9a0;
+  --hbg: #f5c842;
+  --philly: #e85c6a;
+  --pgh: #5b8df5;
+  --r: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Lora',serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:3px;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  position:relative;overflow:hidden;
+  padding:40px 20px;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);
+}
+.hero-glow{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(245,200,66,0.12) 0%,transparent 70%);
+  top:50%;left:50%;
+  transform:translate(-50%,-60%);
+  pointer-events:none;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,200,66,0.1);
+  border:1px solid rgba(245,200,66,0.25);
+  color:var(--accent);
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+  padding:8px 18px;border-radius:50px;
+  margin-bottom:28px;
+  animation:fadeUp 0.7s ease both;
+}
+.hero-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(48px,9vw,108px);
+  font-weight:800;
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  color:var(--text);
+  position:relative;z-index:1;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero-title em{
+  font-family:'Lora',serif;
+  font-style:italic;font-weight:400;
+  color:var(--accent);
+  display:block;font-size:0.6em;
+}
+.hero-sub{
+  margin-top:24px;
+  font-size:17px;line-height:1.7;
+  color:var(--muted);max-width:500px;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-cities{
+  display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;justify-content:center;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.hero-city-btn{
+  padding:14px 28px;border-radius:12px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  transition:all 0.2s ease;
+  position:relative;overflow:hidden;
+}
+.hero-city-btn::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,0.1);
+  transform:translateY(100%);transition:transform 0.2s ease;
+}
+.hero-city-btn:hover::before{transform:translateY(0);}
+.btn-hbg{background:var(--hbg);color:#1a1a00;}
+.btn-philly{background:var(--philly);color:#fff;}
+.btn-pgh{background:var(--pgh);color:#fff;}
+.btn-balt{background:#ff6b35;color:#fff;}
+.hero-city-btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.4);}
+
+.scroll-indicator{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--muted);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  font-family:'DM Mono',monospace;
+  animation:fadeUp 1s 0.5s ease both;
+}
+.scroll-line{
+  width:1px;height:40px;
+  background:linear-gradient(to bottom,var(--accent),transparent);
+  animation:growLine 2s ease infinite;
+}
+@keyframes growLine{0%,100%{height:30px;opacity:0.3}50%{height:50px;opacity:0.8}}
+
+/* ── MAIN APP LAYOUT ── */
+.app{display:none;min-height:100vh;}
+.app.visible{display:flex;flex-direction:column;}
+
+/* ── TOP NAV ── */
+.top-nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(13,13,20,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+  padding:0 24px;height:64px;gap:20px;
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:16px;color:var(--text);
+  display:flex;align-items:center;gap:8px;flex-shrink:0;
+}
+.nav-logo span{color:var(--accent);}
+.nav-city-tabs{display:flex;gap:4px;margin-left:auto;}
+.city-tab{
+  padding:8px 18px;border-radius:8px;
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  border:1px solid transparent;cursor:pointer;
+  background:transparent;color:var(--muted);
+  transition:all 0.2s ease;
+}
+.city-tab:hover{color:var(--text);background:var(--surface2);}
+.city-tab.active-hbg{background:rgba(245,200,66,0.15);border-color:rgba(245,200,66,0.3);color:var(--hbg);}
+.city-tab.active-philly{background:rgba(232,92,106,0.15);border-color:rgba(232,92,106,0.3);color:var(--philly);}
+.city-tab.active-pgh{background:rgba(91,141,245,0.15);border-color:rgba(91,141,245,0.3);color:var(--pgh);}
+.city-tab.active-balt{background:rgba(255,107,53,0.15);border-color:rgba(255,107,53,0.3);color:#ff6b35;}
+.back-btn{
+  padding:8px 16px;border-radius:8px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--muted);cursor:pointer;
+  transition:all 0.2s;
+}
+.back-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
+
+/* ── MAIN COLUMNS ── */
+.main-cols{
+  display:grid;
+  grid-template-columns:1fr 400px;
+  gap:0;
+  flex:1;
+  min-height:calc(100vh - 64px);
+}
+@media(max-width:1100px){
+  .main-cols{grid-template-columns:1fr;}
+}
+
+/* ── LEFT PANEL ── */
+.left-panel{
+  padding:32px;
+  overflow-y:auto;
+  max-height:calc(100vh - 64px);
+}
+
+/* ── SECTION HEADER ── */
+.section-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:20px;
+}
+.section-title{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:10px;
+}
+.section-title::before{
+  content:'';width:24px;height:2px;
+  background:currentColor;
+}
+
+/* ── SMART TRIP PRESETS ── */
+.presets-bar{
+  display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;
+}
+.preset-btn{
+  flex:1;min-width:140px;
+  padding:14px 16px;border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  cursor:pointer;text-align:left;
+  transition:all 0.25s ease;
+  position:relative;overflow:hidden;
+}
+.preset-btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.15);}
+.preset-btn.selected{border-color:var(--accent);background:rgba(245,200,66,0.06);}
+.preset-label{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.preset-stars{color:var(--accent);font-size:12px;letter-spacing:-1px;}
+.preset-name{
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:14px;color:var(--text);margin-bottom:4px;
+}
+.preset-tagline{font-size:12px;color:var(--muted);line-height:1.4;}
+.preset-price{
+  position:absolute;top:12px;right:12px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--accent);
+}
+
+/* ── MODULE GRID ── */
+.modules-section{margin-bottom:32px;}
+.modules-category{
+  margin-bottom:24px;
+}
+.cat-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);
+}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+.modules-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:12px;
+}
+
+.module-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:18px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  position:relative;
+  overflow:hidden;
+  user-select:none;
+}
+.module-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  opacity:0;transition:opacity 0.2s;
+}
+.module-card.selected::before{opacity:1;}
+.module-card:hover{border-color:rgba(255,255,255,0.15);transform:translateY(-2px);}
+.module-card.selected{border-color:rgba(245,200,66,0.4);background:rgba(245,200,66,0.05);}
+.module-card.selected.philly-mod{border-color:rgba(232,92,106,0.4);background:rgba(232,92,106,0.05);}
+.module-card.selected.pgh-mod{border-color:rgba(91,141,245,0.4);background:rgba(91,141,245,0.05);}
+.module-card.selected.balt-mod{border-color:rgba(255,107,53,0.4);background:rgba(255,107,53,0.05);}
+
+.mod-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.mod-icon{font-size:28px;flex-shrink:0;line-height:1;}
+.mod-info{flex:1;min-width:0;}
+.mod-name{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:15px;
+  color:var(--text);margin-bottom:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mod-type{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+}
+.mod-check{
+  width:22px;height:22px;border-radius:6px;
+  border:1px solid var(--border);
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;font-size:12px;
+}
+.module-card.selected .mod-check{
+  background:var(--accent);border-color:var(--accent);color:#000;
+}
+.module-card.selected.philly-mod .mod-check{background:var(--philly);border-color:var(--philly);color:#fff;}
+.module-card.selected.pgh-mod .mod-check{background:var(--pgh);border-color:var(--pgh);color:#fff;}
+.module-card.selected.balt-mod .mod-check{background:#ff6b35;border-color:#ff6b35;color:#fff;}
+
+.mod-desc{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:12px;}
+
+.mod-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.mod-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  padding:3px 9px;border-radius:50px;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);
+  border:1px solid var(--border);
+}
+.mod-cost{
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--green);margin-left:auto;font-weight:500;
+}
+.mod-stars{font-size:11px;color:var(--accent);}
+.mod-duration{font-size:10px;color:var(--muted);}
+
+.mod-votes{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.vote-btn{
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:4px 10px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--muted);cursor:pointer;
+  transition:all 0.15s;
+  display:flex;align-items:center;gap:4px;
+}
+.vote-btn:hover{background:rgba(255,255,255,0.1);color:var(--text);}
+.vote-btn.voted-up{background:rgba(66,217,160,0.15);border-color:rgba(66,217,160,0.3);color:var(--green);}
+.vote-btn.voted-down{background:rgba(232,92,106,0.15);border-color:rgba(232,92,106,0.3);color:var(--philly);}
+.vote-count{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+.add-btn{
+  margin-left:auto;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:4px 12px;
+  font-family:'Syne',sans-serif;font-size:11px;font-weight:700;
+  color:var(--muted);cursor:pointer;
+  transition:all 0.15s;
+}
+.module-card.selected .add-btn{
+  background:var(--accent);border-color:var(--accent);color:#000;
+}
+.module-card.selected.philly-mod .add-btn{background:var(--philly);border-color:var(--philly);color:#fff;}
+.module-card.selected.pgh-mod .add-btn{background:var(--pgh);border-color:var(--pgh);color:#fff;}
+.module-card.selected.balt-mod .add-btn{background:#ff6b35;border-color:#ff6b35;color:#fff;}
+
+/* ── RIGHT PANEL ── */
+.right-panel{
+  background:var(--surface);
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;
+  position:sticky;top:64px;
+  height:calc(100vh - 64px);
+  overflow:hidden;
+}
+
+/* ── MAP ── */
+.map-container{
+  height:280px;
+  background:var(--surface2);
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+}
+#map-canvas{width:100%;height:100%;display:block;}
+.map-overlay{
+  position:absolute;top:12px;left:12px;right:12px;
+  display:flex;gap:8px;
+}
+.map-pill{
+  background:rgba(13,13,20,0.85);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:6px 12px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--text);
+  display:flex;align-items:center;gap:6px;
+}
+.map-pill-dot{width:8px;height:8px;border-radius:50%;background:var(--green);}
+
+/* ── TRIP SUMMARY ── */
+.trip-summary{
+  flex:1;overflow-y:auto;
+  padding:20px;
+}
+.summary-header{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:18px;
+  margin-bottom:4px;
+}
+.summary-sub{font-size:12px;color:var(--muted);margin-bottom:20px;}
+
+/* ── COST BREAKDOWN ── */
+.cost-panel{
+  background:var(--surface2);border-radius:14px;
+  padding:16px;margin-bottom:16px;
+}
+.cost-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+.cost-row:last-child{border-bottom:none;padding-bottom:0;}
+.cost-label{color:var(--muted);display:flex;align-items:center;gap:6px;}
+.cost-val{font-family:'DM Mono',monospace;color:var(--green);}
+.cost-total-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 16px;
+  background:var(--bg);border-radius:10px;
+  margin-top:10px;
+}
+.cost-total-label{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;}
+.cost-total-val{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:22px;
+  color:var(--accent);
+}
+
+/* ── EXPERIENCE METER ── */
+.xp-panel{background:var(--surface2);border-radius:14px;padding:16px;margin-bottom:16px;}
+.xp-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.xp-label{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;}
+.xp-score{
+  font-family:'DM Mono',monospace;font-size:22px;
+  font-weight:500;color:var(--accent);
+}
+.xp-bar-track{
+  height:8px;background:var(--bg);border-radius:50px;overflow:hidden;
+  margin-bottom:8px;
+}
+.xp-bar-fill{
+  height:100%;border-radius:50px;
+  background:linear-gradient(90deg,var(--accent3),var(--accent),var(--green));
+  transition:width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+.xp-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.xp-tag{
+  font-family:'DM Mono',monospace;font-size:10px;
+  padding:3px 10px;border-radius:50px;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);border:1px solid var(--border);
+}
+
+/* ── ITINERARY TIMELINE ── */
+.itinerary-list{margin-bottom:16px;}
+.itin-item{
+  display:flex;gap:12px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.itin-item:last-child{border-bottom:none;}
+.itin-num{
+  width:24px;height:24px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:10px;
+  flex-shrink:0;color:var(--muted);
+  margin-top:2px;
+}
+.itin-content{flex:1;min-width:0;}
+.itin-name{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;margin-bottom:2px;}
+.itin-meta{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+.itin-remove{
+  background:none;border:none;color:var(--muted);
+  cursor:pointer;font-size:14px;padding:4px;
+  transition:color 0.15s;align-self:flex-start;
+}
+.itin-remove:hover{color:var(--philly);}
+
+/* ── PARKING INFO ── */
+.parking-panel{
+  background:rgba(245,200,66,0.06);
+  border:1px solid rgba(245,200,66,0.2);
+  border-radius:14px;padding:14px;margin-bottom:16px;
+}
+.parking-title{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.parking-item{
+  display:flex;align-items:flex-start;gap:8px;
+  padding:7px 0;border-bottom:1px solid rgba(245,200,66,0.1);
+  font-size:12px;
+}
+.parking-item:last-child{border-bottom:none;}
+.parking-badge{
+  background:rgba(245,200,66,0.15);
+  border-radius:4px;padding:2px 6px;
+  font-family:'DM Mono',monospace;font-size:10px;
+  color:var(--accent);flex-shrink:0;
+}
+.parking-text{color:var(--muted);line-height:1.4;}
+.parking-cost{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--green);}
+
+/* ── VOTE TALLY ── */
+.vote-panel{
+  background:var(--surface2);border-radius:14px;padding:14px;margin-bottom:16px;
+}
+.vote-title{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.vote-item{
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:8px;
+}
+.vote-item-name{font-size:12px;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.vote-bar-track{flex:2;height:6px;background:var(--bg);border-radius:50px;overflow:hidden;}
+.vote-bar-fill{height:100%;border-radius:50px;background:var(--accent);transition:width 0.4s ease;}
+.vote-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);flex-shrink:0;}
+
+/* ── EXPORT BTN ── */
+.export-btn{
+  width:100%;padding:14px;
+  background:var(--accent);
+  border:none;border-radius:12px;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:14px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:#0d0d14;cursor:pointer;
+  transition:all 0.2s ease;
+  margin-top:8px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.export-btn:hover{background:#ffd966;transform:translateY(-1px);box-shadow:0 8px 24px rgba(245,200,66,0.3);}
+
+/* ── EMPTY STATE ── */
+.empty-state{
+  text-align:center;padding:40px 20px;
+  color:var(--muted);
+}
+.empty-icon{font-size:40px;margin-bottom:12px;display:block;opacity:0.4;}
+.empty-text{font-size:13px;line-height:1.6;}
+
+/* ── PRINT VIEW ── */
+.print-overlay{
+  display:none;
+  position:fixed;inset:0;
+  background:var(--bg);z-index:9999;
+  overflow-y:auto;
+  padding:40px;
+}
+.print-overlay.visible{display:block;}
+.print-close{
+  position:fixed;top:20px;right:20px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:8px 16px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--muted);cursor:pointer;z-index:1;
+}
+.print-close:hover{color:var(--text);}
+.print-content{max-width:700px;margin:0 auto;}
+.print-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:44px;margin-bottom:4px;
+}
+.print-subtitle{font-size:16px;color:var(--muted);margin-bottom:40px;}
+.print-stop{
+  display:flex;gap:20px;margin-bottom:28px;
+  padding:24px;background:var(--surface);border-radius:16px;
+}
+.print-num{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--accent);color:#000;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:16px;
+  flex-shrink:0;
+}
+.print-stop-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:6px;}
+.print-stop-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.print-stop-meta{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;}
+.print-meta-item{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+
+/* ── CITY BANNER IN APP ── */
+.city-app-banner{
+  border-radius:16px;
+  padding:28px 28px 24px;
+  margin-bottom:28px;
+  position:relative;overflow:hidden;
+}
+.cab-hbg{background:linear-gradient(135deg,#2d2710,#4a3a0a);}
+.cab-philly{background:linear-gradient(135deg,#2e1010,#4a1a1a);}
+.cab-pgh{background:linear-gradient(135deg,#0e1628,#1a2e50);}
+.cab-balt{background:linear-gradient(135deg,#1a0a00,#2d1200);}
+.cab-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:32px;margin-bottom:4px;
+}
+.cab-sub{font-size:14px;color:rgba(255,255,255,0.5);}
+.cab-badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.cab-badge{
+  padding:5px 12px;border-radius:50px;
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── TOOLTIP ── */
+.tooltip{
+  position:absolute;
+  background:rgba(13,13,20,0.95);
+  border:1px solid var(--border);
+  border-radius:8px;padding:8px 12px;
+  font-size:11px;color:var(--text);
+  pointer-events:none;z-index:999;
+  white-space:nowrap;
+  backdrop-filter:blur(10px);
+  opacity:0;transition:opacity 0.2s;
+}
+
+/* ── PULSE ANIMATION ── */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.live-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--green);
+  animation:pulse 2s ease infinite;display:inline-block;
+}
+
+/* ── MOBILE TOGGLE ── */
+.panel-toggle{
+  display:none;
+  position:fixed;bottom:20px;right:20px;z-index:300;
+  background:var(--accent);
+  border:none;border-radius:50%;
+  width:52px;height:52px;
+  font-size:20px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(245,200,66,0.4);
+}
+@media(max-width:1100px){.panel-toggle{display:flex;align-items:center;justify-content:center;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero-title{font-size:48px;}
+  .left-panel{padding:16px;}
+  .modules-grid{grid-template-columns:1fr;}
+  .presets-bar{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <p class="hero-pill">🎂 Angie's 24th Birthday · Lock Haven, PA</p>
+  <h1 class="hero-title">
+    Angie's<br>
+    <em>24th Birthday 🎂</em>
+  </h1>
+  <p class="hero-sub">Pick a city, build the perfect day, vote with the squad — and make Angie's 24th completely unforgettable. 🎉</p>
+  <div class="hero-cities">
+    <button class="hero-city-btn btn-hbg" onclick="openCity('hbg')">🏛 Harrisburg <span style="opacity:0.6;font-size:11px;margin-left:4px">~1.5hr drive</span></button>
+    <button class="hero-city-btn btn-philly" onclick="openCity('philly')">🗽 Philadelphia <span style="opacity:0.6;font-size:11px;margin-left:4px">~3hr drive</span></button>
+    <button class="hero-city-btn btn-pgh" onclick="openCity('pgh')">🌉 Pittsburgh <span style="opacity:0.6;font-size:11px;margin-left:4px">~3.5hr drive</span></button>
+    <button class="hero-city-btn btn-balt" onclick="openCity('balt')">🦀 Baltimore <span style="opacity:0.6;font-size:11px;margin-left:4px">~3hr drive</span></button>
+  </div>
+  <div class="scroll-indicator">
+    <span>Choose City</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════ MAIN APP ════════ -->
+<div class="app" id="app">
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <div class="nav-logo">🎂 <span>Angie's 24th</span></div>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+    <div class="nav-city-tabs">
+      <button class="city-tab" id="tab-hbg" onclick="openCity('hbg')">🏛 HBG</button>
+      <button class="city-tab" id="tab-philly" onclick="openCity('philly')">🗽 PHL</button>
+      <button class="city-tab" id="tab-pgh" onclick="openCity('pgh')">🌉 PGH</button>
+      <button class="city-tab" id="tab-balt" onclick="openCity('balt')">🦀 BALT</button>
+    </div>
+    <button class="share-nav-btn" onclick="showShareModal()" title="Share this trip">🔗 Share</button>
+  </nav>
+
+  <div class="main-cols">
+    <!-- LEFT: Module Picker -->
+    <div class="left-panel" id="left-panel">
+      <div id="city-content"></div>
+    </div>
+
+    <!-- RIGHT: Live Summary -->
+    <div class="right-panel" id="right-panel">
+      <!-- Map -->
+      <div class="map-container">
+        <canvas id="map-canvas"></canvas>
+        <div class="map-overlay">
+          <div class="map-pill"><span class="map-pill-dot"></span> <span id="map-route-label">Select stops to see route</span></div>
+          <div class="map-pill" id="map-time-pill" style="display:none">🚗 <span id="map-drive-time">-</span></div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="trip-summary">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+          <div class="summary-header" id="summary-city-name">Your Trip</div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);">
+            <span class="live-dot"></span> LIVE
+          </div>
+        </div>
+        <div class="summary-sub" id="summary-sub">Add stops to start building</div>
+
+        <!-- Experience Score -->
+        <div class="xp-panel">
+          <div class="xp-header">
+            <span class="xp-label">Experience Score</span>
+            <span class="xp-score" id="xp-score">—</span>
+          </div>
+          <div class="xp-bar-track"><div class="xp-bar-fill" id="xp-bar" style="width:0%"></div></div>
+          <div class="xp-tags" id="xp-tags"></div>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div class="cost-panel" id="cost-panel">
+          <div class="cost-row"><span class="cost-label">🎭 Activities</span><span class="cost-val" id="cost-activities">$0</span></div>
+          <div class="cost-row"><span class="cost-label">🍽️ Food & Drinks</span><span class="cost-val" id="cost-food">$0</span></div>
+          <div class="cost-row"><span class="cost-label">🚗 Gas (from Lock Haven)</span><span class="cost-val" id="cost-gas">$0</span></div>
+          <div class="cost-row"><span class="cost-label">🅿️ Parking</span><span class="cost-val" id="cost-parking">$0</span></div>
+          <div class="cost-total-row">
+            <span class="cost-total-label">Total / person</span>
+            <span class="cost-total-val" id="cost-total">$0</span>
+          </div>
+        </div>
+
+        <!-- Itinerary -->
+        <div class="section-title" style="margin-bottom:12px;font-size:11px;">Your Itinerary</div>
+        <div class="itinerary-list" id="itinerary-list">
+          <div class="empty-state">
+            <span class="empty-icon">🗺️</span>
+            <p class="empty-text">Tap any activity card to add it to your itinerary. Pick stops, compare costs, and vote!</p>
+          </div>
+        </div>
+
+        <!-- Parking -->
+        <div class="parking-panel" id="parking-panel" style="display:none">
+          <div class="parking-title">🅿️ Parking Tips</div>
+          <div id="parking-list"></div>
+        </div>
+
+        <!-- Vote Tally -->
+        <div class="vote-panel" id="vote-panel" style="display:none">
+          <div class="vote-title">Friend Votes</div>
+          <div id="vote-list"></div>
+        </div>
+
+        <button class="export-btn" onclick="exportItinerary()">📄 Export Itinerary → Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINT OVERLAY -->
+<div class="print-overlay" id="print-overlay">
+  <button class="print-close" onclick="closePrint()">✕ Close</button>
+  <div class="print-content" id="print-content"></div>
+</div>
+
+<!-- SHARE MODAL -->
+<div class="share-modal-overlay" id="share-modal" onclick="if(event.target===this)closeShareModal()">
+  <div class="share-modal">
+    <div class="share-modal-header">
+      <div class="share-modal-title">🔗 Share Your Trip</div>
+      <button class="share-modal-close" onclick="closeShareModal()">✕</button>
+    </div>
+    <div class="share-modal-body">
+      <div id="share-preview"></div>
+      <div class="share-url-label">Shareable Link — paste this anywhere</div>
+      <div class="share-url-row">
+        <input class="share-url-input" id="share-url-input" type="text" readonly onclick="this.select()" />
+        <button class="share-copy-btn" id="copy-btn" onclick="copyShareURL()">Copy Link</button>
+      </div>
+      <div class="share-hints">
+        <div class="share-hint">📱 Works on any device — your friends open the link and see your exact trip</div>
+        <div class="share-hint">🗳️ They can add their own votes and send back their version</div>
+        <div class="share-hint">🔄 URL updates automatically as you add/remove stops</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<button class="panel-toggle" id="panel-toggle" onclick="togglePanel()">📊</button>
+
+<style>
+/* ── SHARE NAV BTN ── */
+.share-nav-btn{
+  margin-left:8px;
+  padding:8px 16px;border-radius:8px;
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.05em;
+  background:var(--accent);color:#0d0d14;
+  border:none;cursor:pointer;
+  transition:all 0.2s ease;
+  white-space:nowrap;
+}
+.share-nav-btn:hover{background:#ffd966;transform:translateY(-1px);}
+
+/* ── SHARE MODAL ── */
+.share-modal-overlay{
+  display:none;position:fixed;inset:0;z-index:9000;
+  background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.share-modal-overlay.visible{display:flex;}
+.share-modal{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  width:100%;max-width:520px;
+  overflow:hidden;
+  animation:modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes modalIn{from{transform:scale(0.9) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.share-modal-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;
+  border-bottom:1px solid var(--border);
+}
+.share-modal-title{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;}
+.share-modal-close{
+  background:rgba(255,255,255,0.06);border:1px solid var(--border);
+  border-radius:8px;padding:6px 12px;color:var(--muted);
+  cursor:pointer;font-size:14px;transition:all 0.15s;
+}
+.share-modal-close:hover{color:var(--text);background:rgba(255,255,255,0.1);}
+.share-modal-body{padding:20px 24px;}
+.share-url-label{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+.share-url-row{display:flex;gap:8px;margin-bottom:16px;}
+.share-url-input{
+  flex:1;background:var(--bg);border:1px solid var(--border);
+  border-radius:10px;padding:10px 14px;
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--accent);outline:none;
+  cursor:pointer;min-width:0;
+}
+.share-url-input:focus{border-color:var(--accent);}
+.share-copy-btn{
+  padding:10px 20px;border-radius:10px;
+  background:var(--accent);border:none;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:13px;
+  color:#0d0d14;cursor:pointer;white-space:nowrap;
+  transition:all 0.2s;
+}
+.share-copy-btn:hover{background:#ffd966;}
+.share-hints{display:flex;flex-direction:column;gap:8px;}
+.share-hint{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:12px;color:var(--muted);
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:8px;padding:10px 12px;
+  line-height:1.5;
+}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--surface);border:1px solid rgba(66,217,160,0.3);
+  border-radius:12px;padding:12px 24px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:14px;
+  color:var(--green);z-index:9999;
+  transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),opacity 0.3s;
+  opacity:0;pointer-events:none;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+.toast.visible{transform:translateX(-50%) translateY(0);opacity:1;}
+</style>
+<script>
+// ════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════
+const CITIES = {
+  hbg: {
+    name: 'Harrisburg',
+    emoji: '🏛️',
+    tagline: 'The Hidden Gem',
+    color: '#f5c842',
+    cls: 'hbg',
+    bannerCls: 'cab-hbg',
+    tabActiveCls: 'active-hbg',
+    drive: '1.5 hrs from Lock Haven',
+    gasCost: 12,
+    parking: [
+      { name: 'Market Square Garage', cost: '$5/day', note: 'Best value, 2 min walk to downtown', badge: '💚 BEST' },
+      { name: 'Walnut St Deck (ParkHBG)', cost: '$8/day', note: 'Central, close to Millworks & restaurants', badge: '⭐ CLOSE' },
+      { name: 'Street Parking (Front St)', cost: 'Free–$2/hr', note: 'Limited; free on weekends after 6pm', badge: '🆓 FREE' },
+      { name: 'Riverfront Lot', cost: '$3/day', note: 'Near Fort Hunter, walk to waterfront', badge: '💚 CHEAP' },
+    ],
+    presets: {
+      p5: {
+        label: '5/10',
+        name: 'Easy Breezy Day',
+        tagline: 'Stress-free local fun',
+        price: '~$65',
+        ids: ['fort-hunter','millworks-lunch','zembie'],
+      },
+      p8: {
+        label: '8/10',
+        name: 'Artsy Birthday',
+        tagline: 'Art, brew & karaoke',
+        price: '~$100',
+        ids: ['fort-hunter','millworks-lunch','benaiahs','704-lounge'],
+      },
+      p10: {
+        label: '10/10',
+        name: 'Full Send HBG',
+        tagline: 'Everything, perfectly curated',
+        price: '~$130',
+        ids: ['fort-hunter','greenbelt','millworks-lunch','federal-tap','benaiahs','704-lounge'],
+      },
+    },
+    categories: [
+      {
+        name: 'Morning Activities',
+        color: '#42d9a0',
+        items: [
+          {
+            id:'fort-hunter',icon:'🏰',name:'Fort Hunter Mansion & Park',type:'Historic Site',
+            desc:'A stunning 19th-century mansion along the Susquehanna River. Free park grounds, $9 guided mansion tours, beautiful river views and photo ops.',
+            cost:9,costLabel:'$0–9',stars:'★★★★★',duration:'1.5 hrs',time:'10:00 AM',
+            tags:['Outdoors','Historic','Photo Op'],xp:6,category:'activity',
+            parkingNote:'Riverside lot on-site, free',address:'5300 N Front St, Harrisburg'
+          },
+          {
+            id:'greenbelt',icon:'🚴',name:'Capital Area Greenbelt',type:'Outdoor Trail',
+            desc:'20-mile scenic trail hugging the Susquehanna. Free, beautiful morning bike or walk along the river before hitting the city.',
+            cost:0,costLabel:'Free',stars:'★★★★☆',duration:'1 hr',time:'9:30 AM',
+            tags:['Free','Outdoors','Scenic'],xp:4,category:'activity',
+            parkingNote:'Street parking near trailheads',address:'Greenbelt Trailhead, Harrisburg'
+          },
+        ]
+      },
+      {
+        name: 'Food & Drink',
+        color: '#e85c6a',
+        items: [
+          {
+            id:'millworks-lunch',icon:'🍺',name:'The Millworks',type:'Brewery + Restaurant',
+            desc:'Farm-to-table in a converted mill with live artist studios to explore. Wood-fired pizza, craft beer, creative cocktails. One of Harrisburg\'s most unique spots. ★4.7',
+            cost:35,costLabel:'$25–45',stars:'★★★★★',duration:'1.5 hrs',time:'12:00 PM',
+            tags:['Brewery','Art Gallery','$$'],xp:8,category:'food',
+            parkingNote:'Walnut St Deck nearby, $8/day',address:'340 Verbeke St, Harrisburg'
+          },
+          {
+            id:'federal-tap',icon:'🍻',name:'Federal Taphouse',type:'Happy Hour Bar',
+            desc:'40+ craft beers on tap, great happy hour deals. Perfect afternoon bridge between dinner and karaoke. Lively, social atmosphere.',
+            cost:20,costLabel:'$15–25',stars:'★★★★☆',duration:'1 hr',time:'4:00 PM',
+            tags:['Bar','Happy Hour','Budget'],xp:5,category:'food',
+            parkingNote:'Street parking or Walnut Deck',address:'235 N 2nd St, Harrisburg'
+          },
+          {
+            id:'benaiahs',icon:'✨',name:'Benaiahs Scratch Kitchen',type:'Birthday Dinner',
+            desc:'Farm-to-table fine dining at accessible prices. ★4.8/5 with 500+ reviews. Incredible pasta, inventive cocktails, warm atmosphere. THE birthday dinner spot in HBG.',
+            cost:50,costLabel:'$35–60',stars:'★★★★★',duration:'2 hrs',time:'6:00 PM',
+            tags:['Farm-to-Table','Birthday Spot','$$','Reserve Ahead'],xp:9,category:'food',
+            parkingNote:'Free lot adjacent to restaurant',address:'1708 Fairmont Dr, Harrisburg'
+          },
+          {
+            id:'zembie',icon:'🍗',name:'Zembie\'s Sports Tavern',type:'Casual Dinner + Karaoke',
+            desc:'Old-school dive bar energy with amazing wings and cheap drinks. Good for a casual birthday dinner — note: indoor smoking allowed. ★4.3',
+            cost:25,costLabel:'$18–30',stars:'★★★★☆',duration:'2 hrs',time:'7:00 PM',
+            tags:['Dive Bar','Budget-Friendly','Wings'],xp:5,category:'food',
+            parkingNote:'Street parking, easy',address:'226 N 2nd St, Harrisburg'
+          },
+        ]
+      },
+      {
+        name: 'Evening & Karaoke',
+        color: '#f5c842',
+        items: [
+          {
+            id:'704-lounge',icon:'🎙️',name:'704 Lounge',type:'Karaoke Bar',
+            desc:'Harrisburg\'s best karaoke night (Wednesdays especially). Inclusive, community-driven, cozy atmosphere. Attentive bartenders and great drink prices. ★4.4',
+            cost:20,costLabel:'$15–30',stars:'★★★★☆',duration:'2+ hrs',time:'8:00 PM',
+            tags:['Karaoke','LGBTQ+ Welcoming','Affordable'],xp:8,category:'evening',
+            parkingNote:'704 Lounge has street parking nearby',address:'704 N 3rd St, Harrisburg'
+          },
+          {
+            id:'midtown-cinema',icon:'🎬',name:'Midtown Cinema',type:'Indie Movie Theater',
+            desc:'Cozy independent cinema showing art house and indie films. Cheap tickets, great for an afternoon activity before dinner.',
+            cost:12,costLabel:'$10–14',stars:'★★★★☆',duration:'2 hrs',time:'3:00 PM',
+            tags:['Movies','Cheap','Cozy'],xp:4,category:'evening',
+            parkingNote:'Adjacent lot, free',address:'250 Reily St, Harrisburg'
+          },
+        ]
+      },
+    ]
+  },
+  philly: {
+    name: 'Philadelphia',
+    emoji: '🗽',
+    tagline: 'The Culture Lover',
+    color: '#e85c6a',
+    cls: 'philly',
+    bannerCls: 'cab-philly',
+    tabActiveCls: 'active-philly',
+    drive: '3 hrs from Lock Haven',
+    gasCost: 28,
+    parking: [
+      { name: 'PHL Park (Philadelphia Parking Auth.)', cost: '$10–15/day', note: 'Cheapest official garages — use phila.gov/parking finder', badge: '💚 BEST' },
+      { name: 'SpotHero / ParkWhiz App', cost: '$8–18/day', note: 'Pre-book discounted spots, huge savings vs walk-up', badge: '📱 SMART' },
+      { name: 'South St / Headhouse Sq Lots', cost: '$10–12/day', note: 'Near Magic Gardens, walk to Yakitori Boy in 15 min', badge: '⭐ CLOSE' },
+      { name: 'SEPTA from suburbs', cost: '$5–10 RT', note: 'Park in Lansdale, Norristown and train in — cheapest option!', badge: '🚆 CHEAPEST' },
+    ],
+    presets: {
+      p5: {
+        label: '5/10',
+        name: 'Philly Sampler',
+        tagline: 'Quick, budget city hit',
+        price: '~$85',
+        ids: ['reading-terminal','museum-illusions-phl','voix-karaoke'],
+      },
+      p8: {
+        label: '8/10',
+        name: 'Culture & Karaoke',
+        tagline: 'Art, food, private karaoke',
+        price: '~$150',
+        ids: ['magic-gardens','museum-illusions-phl','the-love','yakitori-boy'],
+      },
+      p10: {
+        label: '10/10',
+        name: 'Iconic Philly Day',
+        tagline: 'Full immersion birthday',
+        price: '~$200',
+        ids: ['magic-gardens','museum-illusions-phl','conquer-ninja','the-love','yakitori-boy'],
+      },
+    },
+    categories: [
+      {
+        name: 'Morning Activities',
+        color: '#42d9a0',
+        items: [
+          {
+            id:'magic-gardens',icon:'🌿',name:'Philadelphia\'s Magic Gardens',type:'Art Labyrinth',
+            desc:'Isaiah Zagar\'s 40-year mosaic masterpiece. Labyrinthine corridors of hand-embedded tiles, mirrors and folk art. Absolutely stunning birthday photos. ★4.6 · 5,500+ reviews.',
+            cost:10,costLabel:'$8–10',stars:'★★★★★',duration:'1.5 hrs',time:'11:00 AM',
+            tags:['Art','Photo Op','★4.6','Book Online'],xp:9,category:'activity',
+            parkingNote:'South St lot 2 min walk, ~$10',address:'1020 South St, Philadelphia'
+          },
+          {
+            id:'museum-illusions-phl',icon:'🪞',name:'Museum of Illusions',type:'Interactive Museum',
+            desc:'Mind-bending optical illusion rooms designed for group photos. Staff help you nail the perfect shots. Budget-friendly, 1 hr of pure laughs. ★4.5',
+            cost:20,costLabel:'$18–22',stars:'★★★★☆',duration:'1 hr',time:'1:00 PM',
+            tags:['Interactive','Group Fun','Photo Op'],xp:7,category:'activity',
+            parkingNote:'Market St garages nearby, ~$15',address:'401 Market St, Philadelphia'
+          },
+          {
+            id:'reading-terminal',icon:'🥙',name:'Reading Terminal Market',type:'Historic Food Market',
+            desc:'America\'s largest indoor food market under one gorgeous roof. Dutch baked goods, Amish produce, DiNic\'s roast pork, craft coffee — perfect morning graze.',
+            cost:20,costLabel:'$10–25',stars:'★★★★★',duration:'1 hr',time:'10:00 AM',
+            tags:['Food Market','Historic','Budget'],xp:7,category:'activity',
+            parkingNote:'Convention Center garage directly below, $15',address:'51 N 12th St, Philadelphia'
+          },
+          {
+            id:'conquer-ninja',icon:'🧗',name:'Conquer Ninja Waterfront',type:'Adventure Activity',
+            desc:'Indoor ninja obstacle course on the Delaware River waterfront. Massive energy boost for 2–4 people. Tons of fun, great group photos, surprisingly affordable.',
+            cost:25,costLabel:'$22–28',stars:'★★★★☆',duration:'1.5 hrs',time:'12:30 PM',
+            tags:['Adventure','Active','Waterfront'],xp:8,category:'activity',
+            parkingNote:'Waterfront lots $10–12',address:'Penn St & Columbus Blvd, Philadelphia'
+          },
+        ]
+      },
+      {
+        name: 'Food & Drink',
+        color: '#e85c6a',
+        items: [
+          {
+            id:'the-love',icon:'💕',name:'The Love.',type:'Birthday Brunch / Lunch',
+            desc:'Stephen Starr restaurant with seasonal New American menu, gorgeous sun-lit interior, and exceptional cocktails. Beloved for birthday meals. Mushroom ravioli and fig gimlet are standouts. ★4.6',
+            cost:70,costLabel:'$55–85',stars:'★★★★★',duration:'1.5 hrs',time:'2:30 PM',
+            tags:['Upscale','Birthday Spot','$$$','Reserve Ahead'],xp:9,category:'food',
+            parkingNote:'Rittenhouse Sq garages ~$12 nearby',address:'130 S 18th St, Philadelphia'
+          },
+          {
+            id:'harp-crown',icon:'🍺',name:'Harp & Crown',type:'Gastropub Dinner',
+            desc:'Stunning underground space with creative seasonal menu. Cheesesteak egg rolls, fig & ricotta toast. Great for birthday celebrations — staff go above and beyond. ★4.5',
+            cost:60,costLabel:'$45–75',stars:'★★★★☆',duration:'2 hrs',time:'5:00 PM',
+            tags:['Gastropub','Birthday Spot','$$$'],xp:8,category:'food',
+            parkingNote:'Midtown garages ~$14/day',address:'1525 Sansom St, Philadelphia'
+          },
+          {
+            id:'south-street-crawl',icon:'🌮',name:'South Street Food Crawl',type:'Casual Street Food',
+            desc:'Walk South Street hitting Jim\'s Steaks, Lorenzo\'s pizza slices, and one of Philly\'s iconic cheesesteak spots. Budget friendly, classic Philly.',
+            cost:25,costLabel:'$15–30',stars:'★★★★☆',duration:'1.5 hrs',time:'1:00 PM',
+            tags:['Budget','Classic Philly','Casual'],xp:6,category:'food',
+            parkingNote:'South St lots $10/day',address:'South Street, Philadelphia'
+          },
+        ]
+      },
+      {
+        name: 'Evening & Karaoke',
+        color: '#5b8df5',
+        items: [
+          {
+            id:'yakitori-boy',icon:'🎤',name:'Yakitori Boy',type:'Private Karaoke + Japanese',
+            desc:'THE birthday move. Private karaoke rooms + yakitori skewers, spring rolls & drinks in Chinatown. Multiple birthday groups rave about this spot. Book a private room! ★4.3',
+            cost:65,costLabel:'$50–80',stars:'★★★★☆',duration:'3 hrs',time:'6:00 PM',
+            tags:['Private Karaoke','Japanese Food','Book 2+ Weeks Ahead','🎂 Birthday Fave'],xp:10,category:'evening',
+            parkingNote:'Chinatown lots $10–12 nearby',address:'211 N 11th St, Philadelphia'
+          },
+          {
+            id:'voix-karaoke',icon:'🎵',name:'VOIX Karaoke',type:'Karaoke Bar',
+            desc:'Modern neon-lit karaoke venue with immersive visuals. Private rooms available. Great margs and lemon drop martinis. Good budget alternative to Yakitori Boy. ★4.4',
+            cost:40,costLabel:'$30–55',stars:'★★★★☆',duration:'2 hrs',time:'7:00 PM',
+            tags:['Karaoke','Private Rooms','Budget Alt'],xp:7,category:'evening',
+            parkingNote:'Northeast Philly location, free lot',address:'2825 Cottman Ave, Philadelphia'
+          },
+          {
+            id:'italian-market',icon:'🏪',name:'Italian Market Stroll',type:'Free Activity',
+            desc:'America\'s oldest outdoor market. Free to wander, cannolis at Isgro\'s, espresso at Caffe Valentino, vibrant murals. Great afternoon/morning walk.',
+            cost:10,costLabel:'$5–15',stars:'★★★★☆',duration:'1 hr',time:'11:00 AM',
+            tags:['Free','Culture','Food'],xp:5,category:'activity',
+            parkingNote:'Street parking on 9th St',address:'9th Street, South Philadelphia'
+          },
+        ]
+      },
+    ]
+  },
+  pgh: {
+    name: 'Pittsburgh',
+    emoji: '🌉',
+    tagline: 'The Jaw-Dropper',
+    color: '#5b8df5',
+    cls: 'pgh',
+    bannerCls: 'cab-pgh',
+    tabActiveCls: 'active-pgh',
+    drive: '3.5 hrs from Lock Haven',
+    gasCost: 32,
+    parking: [
+      { name: 'Pittsburgh Parking Court Apps', cost: '$5–12/day', note: 'Use PGH City app or SpotHero for North Shore & Strip District garages', badge: '📱 SMART' },
+      { name: 'North Shore Lots (Stadium Area)', cost: '$8–15/day', note: 'Museum of Illusions + North Shore walkable. Fill up fast on event days!', badge: '⭐ CLOSE' },
+      { name: 'Schenley Park (Phipps)', cost: 'Free–$3', note: 'Free street parking along Schenley Dr. Very limited — arrive early!', badge: '🆓 FREE' },
+      { name: 'Mt. Washington (Altius)', cost: 'Free', note: 'Free street parking on Grandview Ave — beautiful views while you park!', badge: '💚 BEST' },
+    ],
+    presets: {
+      p5: {
+        label: '5/10',
+        name: 'PGH Casual',
+        tagline: 'Easy Pittsburgh day',
+        price: '~$80',
+        ids: ['strip-district','museum-illusions-pgh','wanna-karaoke'],
+      },
+      p8: {
+        label: '8/10',
+        name: 'PGH Birthday',
+        tagline: 'Culture + incredible food',
+        price: '~$145',
+        ids: ['phipps','museum-illusions-pgh','fig-ash','duquesne'],
+      },
+      p10: {
+        label: '10/10',
+        name: 'Full Pittsburgh',
+        tagline: 'The ultimate jaw-dropper day',
+        price: '~$200+',
+        ids: ['phipps','warhol','museum-illusions-pgh','fig-ash','altius','wanna-karaoke'],
+      },
+    },
+    categories: [
+      {
+        name: 'Morning Activities',
+        color: '#42d9a0',
+        items: [
+          {
+            id:'phipps',icon:'🌺',name:'Phipps Conservatory & Gardens',type:'Botanical Garden',
+            desc:'14 rooms of breathtaking plant life in a Victorian glasshouse. ★4.8 with 10,000+ reviews — Pittsburgh\'s crown jewel. Magical birthday morning with incredible photo ops in every room.',
+            cost:20,costLabel:'$18–22',stars:'★★★★★',duration:'2 hrs',time:'10:00 AM',
+            tags:['Stunning','★4.8','Photo Op','Open 9:30 AM'],xp:9,category:'activity',
+            parkingNote:'Free street parking on Schenley Dr (limited), arrive early',address:'1 Schenley Dr, Pittsburgh'
+          },
+          {
+            id:'strip-district',icon:'🥨',name:'Strip District Morning',type:'Market + Food',
+            desc:'Pittsburgh\'s bustling market neighborhood. Authentic pierogis at Primanti\'s, coffee, fresh pasta, and local bites. Free to explore, ~$10–20 if you snack.',
+            cost:15,costLabel:'$5–25',stars:'★★★★☆',duration:'1.5 hrs',time:'9:30 AM',
+            tags:['Free','Food','Local Gems'],xp:6,category:'activity',
+            parkingNote:'Strip District lots $5–8, arrive before 10am',address:'Penn Ave, Strip District, Pittsburgh'
+          },
+          {
+            id:'warhol',icon:'🎨',name:'Andy Warhol Museum',type:'Pop Art Museum',
+            desc:'7 floors dedicated to Pittsburgh\'s own Andy Warhol. Fascinating, unique, and not your average birthday activity. Perfect for anyone who loves art or pop culture. ★4.6',
+            cost:20,costLabel:'$18–25',stars:'★★★★☆',duration:'1.5 hrs',time:'11:00 AM',
+            tags:['Art','Iconic','Cultural'],xp:8,category:'activity',
+            parkingNote:'North Side lots $8–12 nearby',address:'117 Sandusky St, Pittsburgh'
+          },
+          {
+            id:'museum-illusions-pgh',icon:'🪞',name:'Museum of Illusions Pittsburgh',type:'Interactive Museum',
+            desc:'★4.7 — slightly better rated than the Philly location. Open layout, fantastic group photo rooms, puzzle challenges. Staff are super helpful. Budget-friendly and a guaranteed blast.',
+            cost:20,costLabel:'$18–22',stars:'★★★★★',duration:'1 hr',time:'12:30 PM',
+            tags:['★4.7','Group Fun','Photo Op','Budget'],xp:7,category:'activity',
+            parkingNote:'North Shore lots $8–15, walkable',address:'267 North Shore Dr, Pittsburgh'
+          },
+        ]
+      },
+      {
+        name: 'Food & Drink',
+        color: '#e85c6a',
+        items: [
+          {
+            id:'fig-ash',icon:'🔥',name:'Fig & Ash',type:'Birthday Dinner',
+            desc:'Wood-fired, seasonal, sophisticated — one of Pittsburgh\'s most acclaimed restaurants. North Side gem with outstanding cocktails and an ever-changing menu. Reserve far ahead. ★4.7',
+            cost:65,costLabel:'$50–80',stars:'★★★★★',duration:'2 hrs',time:'5:00 PM',
+            tags:['Wood-Fired','$$$','★4.7','Reserve Early'],xp:9,category:'food',
+            parkingNote:'Ohio St street parking, usually free evenings',address:'514 E Ohio St, Pittsburgh'
+          },
+          {
+            id:'altius',icon:'🥂',name:'Altius — Mt. Washington',type:'View Dining / Cocktails',
+            desc:'THE birthday moment. Fine dining on Mt. Washington overlooking Pittsburgh\'s glittering skyline. The entire city spread below you. Worth every penny — book 3+ weeks ahead. ★4.7',
+            cost:75,costLabel:'$60–100',stars:'★★★★★',duration:'2.5 hrs',time:'7:30 PM',
+            tags:['Skyline View','$$$$','THE Moment','★4.7'],xp:10,category:'food',
+            parkingNote:'Free street parking on Grandview Ave with insane views',address:'1230 Grandview Ave, Pittsburgh'
+          },
+          {
+            id:'primantis',icon:'🥪',name:'Primanti Brothers',type:'Pittsburgh Classic',
+            desc:'The legendary Pittsburgh sandwich with fries and slaw on the sandwich. A Pittsburgh rite of passage. ★4.3 Multiple locations, open late. Great casual lunch.',
+            cost:20,costLabel:'$12–25',stars:'★★★★☆',duration:'45 min',time:'1:00 PM',
+            tags:['Iconic','Budget','Pittsburgh Must'],xp:5,category:'food',
+            parkingNote:'Strip District location has easy parking',address:'46 18th St, Pittsburgh'
+          },
+        ]
+      },
+      {
+        name: 'Evening & Karaoke',
+        color: '#5b8df5',
+        items: [
+          {
+            id:'wanna-karaoke',icon:'🎤',name:'Wanna Karaoke (North Shore)',type:'Karaoke Bar',
+            desc:'Quirky karaoke bar tucked inside Tequila Cowboy on the North Shore. Great energy, friendly crowd, large song selection. One of the last true karaoke spots in PGH. ★4.1',
+            cost:25,costLabel:'$20–35',stars:'★★★★☆',duration:'2+ hrs',time:'8:00 PM',
+            tags:['Karaoke','North Shore','Fun Crowd'],xp:7,category:'evening',
+            parkingNote:'North Shore lots walkable, $8 evenings',address:'380 North Shore Dr #3, Pittsburgh'
+          },
+          {
+            id:'duquesne',icon:'🚡',name:'Duquesne Incline + Mt Washington',type:'Iconic Experience',
+            desc:'Historic cable car ride up Mt. Washington with panoramic Pittsburgh views. ~$5/ride. Perfect golden hour activity before dinner at Altius. Brings the whole skyline into view.',
+            cost:5,costLabel:'$5',stars:'★★★★★',duration:'45 min',time:'6:00 PM',
+            tags:['Iconic','$5','Sunset Views','Photo Op'],xp:8,category:'evening',
+            parkingNote:'Park at Station Square lot $5, ride up',address:'1197 W Carson St, Pittsburgh'
+          },
+          {
+            id:'hi-sound',icon:'🎵',name:'Hi Sound Karaoke',type:'Private Karaoke',
+            desc:'Private karaoke rooms in Squirrel Hill. Cozy leather sofas, JBL speakers, great sound. Good song selection for pop/top 40. Best private room option in Pittsburgh. ★3.9',
+            cost:35,costLabel:'$25–50',stars:'★★★☆☆',duration:'2 hrs',time:'7:00 PM',
+            tags:['Private Rooms','Squirrel Hill','Pop Songs'],xp:6,category:'evening',
+            parkingNote:'Forbes Ave street parking, usually free evenings',address:'6316 Forbes Ave, Pittsburgh'
+          },
+        ]
+      },
+    ]
+  },
+  balt: {
+    name: 'Baltimore',
+    emoji: '🦀',
+    tagline: 'The Crab City Banger',
+    color: '#ff6b35',
+    cls: 'balt',
+    bannerCls: 'cab-balt',
+    tabActiveCls: 'active-balt',
+    drive: '~3 hrs from Lock Haven',
+    gasCost: 26,
+    parking: [
+      { name: 'Pier 5 / Harbor Garage', cost: '$12–18/day', note: 'Best Inner Harbor access, walk to aquarium & Fells Point', badge: '⭐ BEST' },
+      { name: 'Little Italy Lots (Stiles St)', cost: '$8–12/day', note: 'Cheap, 10 min walk to Fells Point nightlife', badge: '💚 VALUE' },
+      { name: 'SpotHero App', cost: '$6–15/day', note: 'Pre-book for best rates — huge savings vs. drive-up', badge: '📱 SMART' },
+      { name: 'Street Parking (Fells Point)', cost: 'Free–$2/hr', note: 'Free residential blocks on weekends past 6pm, limited', badge: '🆓 FREE' },
+    ],
+    presets: {
+      p5: {
+        label: '5/10',
+        name: 'Harbor Stroll',
+        tagline: 'Chill waterfront vibes',
+        price: '~$70',
+        ids: ['inner-harbor','nicks-fish','cats-eye'],
+      },
+      p8: {
+        label: '8/10',
+        name: 'City Birthday',
+        tagline: 'Art, crabs & nightlife',
+        price: '~$110',
+        ids: ['visionary-art','inner-harbor','ampersea','broadway-ktv'],
+      },
+      p10: {
+        label: '10/10',
+        name: 'Full Baltimore',
+        tagline: 'The whole damn city',
+        price: '~$160',
+        ids: ['national-aquarium','visionary-art','nicks-fish','ampersea','broadway-ktv'],
+      },
+    },
+    mapCoords: {
+      home: { x: 0.05, y: 0.15 },
+      stops: [
+        { id: 'national-aquarium', name: 'Aquarium', x: 0.52, y: 0.40 },
+        { id: 'inner-harbor', name: 'Inner Harbor', x: 0.50, y: 0.45 },
+        { id: 'visionary-art', name: 'AVAM', x: 0.47, y: 0.55 },
+        { id: 'top-of-world', name: 'Top of World', x: 0.53, y: 0.42 },
+        { id: 'nicks-fish', name: "Nick's Fish", x: 0.42, y: 0.65 },
+        { id: 'ampersea', name: 'Ampersea', x: 0.68, y: 0.52 },
+        { id: 'balt-seafood', name: 'Balt Seafood', x: 0.72, y: 0.48 },
+        { id: 'cats-eye', name: "Cat's Eye", x: 0.70, y: 0.54 },
+        { id: 'horse-saloon', name: 'Horse Saloon', x: 0.66, y: 0.58 },
+        { id: 'broadway-ktv', name: 'Broadway KTV', x: 0.73, y: 0.50 },
+      ]
+    },
+    categories: [
+      {
+        name: '🌅 Morning & Daytime',
+        color: '#42d9a0',
+        items: [
+          {
+            id:'national-aquarium',icon:'🐠',name:'National Aquarium',type:'Attraction',
+            desc:'One of the best aquariums in the country — sharks, dolphins, jellyfish, a full rainforest exhibit, and 4D theater. Stunning and totally worth it. ★4.6 (33k reviews)',
+            cost:30,costLabel:'$28–35',stars:'★★★★★',duration:'2–3 hrs',time:'9:30 AM',
+            tags:['Must-See','Dolphins','Jellyfish'],xp:9,category:'activity',
+            parkingNote:'Pier 5 garage across the street ~$15/day',address:'501 E Pratt St, Baltimore'
+          },
+          {
+            id:'inner-harbor',icon:'⚓',name:'Inner Harbor Waterfront',type:'Explore',
+            desc:'Free stroll along the iconic Inner Harbor promenade — historic ships, street performers, waterfront views, and endless photo ops. The heart of Baltimore. ★4.5',
+            cost:0,costLabel:'Free',stars:'★★★★☆',duration:'1 hr',time:'11:00 AM',
+            tags:['Free','Waterfront','Photos'],xp:6,category:'activity',
+            parkingNote:'Pier 5 garage or street parking nearby',address:'401 Light St, Baltimore'
+          },
+          {
+            id:'visionary-art',icon:'🎨',name:'American Visionary Art Museum',type:'Museum',
+            desc:'Wildly creative folk and outsider art — one of the most unique museums anywhere. Gift shop alone is worth the trip. Top 5 museum pick by many world travelers. ★4.7',
+            cost:20,costLabel:'$16–22',stars:'★★★★★',duration:'1.5 hrs',time:'10:00 AM',
+            tags:['Unique','Folk Art','Gift Shop'],xp:8,category:'activity',
+            parkingNote:'Free street parking on Key Hwy, walk 5 min',address:'800 Key Hwy, Baltimore'
+          },
+          {
+            id:'top-of-world',icon:'🌆',name:'Top of the World Observation Deck',type:'Views',
+            desc:'Panoramic 360° views of Baltimore from the 27th floor of the World Trade Center. Stunning harbor and skyline views — especially gorgeous late afternoon. ★4.6',
+            cost:8,costLabel:'$6–10',stars:'★★★★☆',duration:'45 min',time:'12:00 PM',
+            tags:['Views','Skyline','Quick Stop'],xp:7,category:'activity',
+            parkingNote:'Park at Pier 5 garage, 2 min walk',address:'401 E Pratt St 27th Fl, Baltimore'
+          },
+        ]
+      },
+      {
+        name: '🦀 Food & Drinks',
+        color: '#e85c6a',
+        items: [
+          {
+            id:'nicks-fish',icon:'🦀',name:"Nick's Fish House",type:'Seafood',
+            desc:"Waterfront seafood spot on the Patapsco River — known for the BEST cream of crab soup in Baltimore and killer crab cakes. Lively outdoor deck and great crush drinks. ★4.5",
+            cost:40,costLabel:'$30–55',stars:'★★★★★',duration:'1.5 hrs',time:'12:30 PM',
+            tags:['Crab Cakes','Waterfront','Outdoor Deck'],xp:8,category:'food',
+            parkingNote:'Free parking lot on-site — easy',address:'2600 Insulator Dr, Baltimore'
+          },
+          {
+            id:'ampersea',icon:'🍽️',name:'Ampersea',type:'Birthday Dinner',
+            desc:"Gem in the Fells Point harbor — stunning waterfront ambiance, incredible mussels, crab pretzel, and fresh seafood. Manager Joey is legendary for making birthdays special. ★4.7",
+            cost:60,costLabel:'$50–75',stars:'★★★★★',duration:'2 hrs',time:'6:00 PM',
+            tags:['Birthday Spot','Harbor Views','Reserve Ahead'],xp:9,category:'food',
+            parkingNote:'Pier 5 garage or Little Italy lots nearby',address:'1417 Thames St, Baltimore'
+          },
+          {
+            id:'balt-seafood',icon:'🦞',name:'Baltimore Seafood (Boil)',type:'Seafood Boil',
+            desc:'Cajun seafood boil spot in Canton — lobster, king crab, shrimp all in buttery garlic sauce. Disposable tablecloths and buckets for shells — messy, fun, and SO good. ★4.7',
+            cost:55,costLabel:'$40–70',stars:'★★★★★',duration:'2 hrs',time:'6:30 PM',
+            tags:['Seafood Boil','Cajun','Canton'],xp:8,category:'food',
+            parkingNote:'Street parking on Boston St, usually available',address:'2324 Boston St, Baltimore'
+          },
+          {
+            id:'horse-saloon',icon:'🍺',name:'The Horse You Came In On Saloon',type:'Bar + Live Music',
+            desc:"Baltimore's oldest bar in Fells Point — live music every night, historic vibes, great cocktails. Where Edgar Allan Poe had his last drink. ★4.3",
+            cost:25,costLabel:'$15–35',stars:'★★★★☆',duration:'2 hrs',time:'8:00 PM',
+            tags:['Live Music','Historic','Fells Point'],xp:7,category:'food',
+            parkingNote:'Street parking on Thames St or Little Italy lots',address:'1626 Thames St, Baltimore'
+          },
+        ]
+      },
+      {
+        name: '🎤 Evening & Karaoke',
+        color: '#a78bfa',
+        items: [
+          {
+            id:'broadway-ktv',icon:'🎤',name:'Broadway KTV & Karaoke',type:'Private Karaoke',
+            desc:'Private karaoke rooms in Fells Point — hot pot + karaoke combo, huge song library (English, K-pop, 90s throwbacks, Mandarin), wireless mics, great sound. Perfect birthday spot. ★4.6',
+            cost:30,costLabel:'$25–45/room',stars:'★★★★★',duration:'2–3 hrs',time:'8:30 PM',
+            tags:['Private Rooms','Fells Point','K-pop + English'],xp:9,category:'evening',
+            parkingNote:'Street parking on Broadway or S Ann St',address:'711 S Broadway, Baltimore'
+          },
+          {
+            id:'cats-eye',icon:'🎸',name:"Cat's Eye Pub",type:'Live Music Bar',
+            desc:"One of Baltimore's best live music bars — legendary Fells Point spot with bands every night. All ages mix, great Guinness, no TVs, just music and good people. ★4.7",
+            cost:15,costLabel:'$10–20',stars:'★★★★★',duration:'2 hrs',time:'9:00 PM',
+            tags:['Live Music','Fells Point','Legendary'],xp:8,category:'evening',
+            parkingNote:'Walk from Fells Point parking, Thames St',address:'1730 Thames St, Baltimore'
+          },
+        ]
+      },
+    ]
+  },
+};
+
+// ════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════
+let state = {
+  city: null,
+  selected: new Set(),
+  votes: {}, // id -> {up, down, myVote}
+};
+
+// ════════════════════════════════════════════════
+// NAVIGATION
+// ════════════════════════════════════════════════
+function goHome() {
+  document.getElementById('hero').style.display='flex';
+  document.getElementById('app').classList.remove('visible');
+  state.city = null; state.selected.clear();
+}
+
+function openCity(cityId) {
+  state.city = cityId;
+  state.selected.clear();
+  document.getElementById('hero').style.display='none';
+  document.getElementById('app').classList.add('visible');
+  // tabs
+  ['hbg','philly','pgh','balt'].forEach(c=>{
+    const t = document.getElementById('tab-'+c);
+    if(t) t.className='city-tab';
+  });
+  const city = CITIES[cityId];
+  document.getElementById('tab-'+cityId).classList.add(city.tabActiveCls);
+  renderCity(cityId);
+  updateSummary();
+  drawMap();
+}
+
+// ════════════════════════════════════════════════
+// RENDER CITY
+// ════════════════════════════════════════════════
+function renderCity(cityId) {
+  const city = CITIES[cityId];
+  const el = document.getElementById('city-content');
+
+  let html = `
+    <div class="city-app-banner ${city.bannerCls}">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="cab-title">${city.emoji} ${city.name}</div>
+          <div class="cab-sub">${city.tagline} · ${city.drive}</div>
+          <div class="cab-badges">
+            <span class="cab-badge">🚗 Gas ~$${city.gasCost}/person</span>
+            <span class="cab-badge">🅿️ Parking tips in sidebar</span>
+            <span class="cab-badge">👥 Group: 2–4 people</span>
+          </div>
+        </div>
+        <div style="font-size:48px;">${city.emoji}</div>
+      </div>
+    </div>
+
+    <!-- SMART PRESETS -->
+    <div class="section-title" style="margin-bottom:16px;">Smart Trips — Pre-Built Itineraries</div>
+    <div class="presets-bar">
+      ${renderPresets(city)}
+    </div>
+
+    <!-- MODULES -->
+    <div class="section-title" style="margin-bottom:16px;margin-top:8px;">Build Your Own — Pick Your Stops</div>
+    <div class="modules-section">
+      ${city.categories.map(cat=>renderCategory(cat,city)).join('')}
+    </div>
+  `;
+  el.innerHTML = html;
+}
+
+function renderPresets(city) {
+  return Object.entries(city.presets).map(([key,p])=>`
+    <button class="preset-btn" id="preset-${city.cls}-${key}" onclick="applyPreset('${city.cls}','${key}')">
+      <div class="preset-label"><span class="preset-stars">${p.label==='10/10'?'★★★★★':p.label==='8/10'?'★★★★☆':'★★★☆☆'}</span> ${p.label} Trip</div>
+      <div class="preset-name">${p.name}</div>
+      <div class="preset-tagline">${p.tagline}</div>
+      <div class="preset-price">${p.price}</div>
+    </button>
+  `).join('');
+}
+
+function renderCategory(cat, city) {
+  return `
+    <div class="modules-category">
+      <div class="cat-header">
+        <span class="cat-dot" style="background:${cat.color}"></span>
+        ${cat.name}
+      </div>
+      <div class="modules-grid">
+        ${cat.items.map(item=>renderModule(item,city)).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderModule(item, city) {
+  const isSel = state.selected.has(item.id);
+  const v = state.votes[item.id] || {up:Math.floor(Math.random()*4),down:Math.floor(Math.random()*2),myVote:null};
+  if(!state.votes[item.id]) state.votes[item.id]=v;
+
+  const selCls = isSel ? `selected ${city.cls!=='hbg'?city.cls+'-mod':''}` : '';
+  const starsHtml = Array.from({length:5},(_,i)=>`<span style="color:${i<Math.round(parseFloat(item.stars.replace('★','').split('★').length.toString()))||4?'#f5c842':'#333'}">${item.stars[i+1]||'☆'}</span>`).join('');
+
+  return `
+    <div class="module-card ${selCls}" id="mod-${item.id}" onclick="toggleModule('${item.id}')">
+      <div class="mod-top">
+        <span class="mod-icon">${item.icon}</span>
+        <div class="mod-info">
+          <div class="mod-name">${item.name}</div>
+          <div class="mod-type">${item.type}</div>
+        </div>
+        <div class="mod-check">${isSel?'✓':''}</div>
+      </div>
+      <div class="mod-desc">${item.desc}</div>
+      <div class="mod-meta">
+        <span class="mod-badge">⏱ ${item.duration}</span>
+        <span class="mod-badge">🕐 ${item.time}</span>
+        <span class="mod-stars">${item.stars}</span>
+        <span class="mod-cost">${item.costLabel}</span>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+        ${item.tags.map(t=>`<span class="mod-badge" style="font-size:10px;">${t}</span>`).join('')}
+      </div>
+      <div class="mod-votes" onclick="event.stopPropagation()">
+        <button class="vote-btn ${v.myVote==='up'?'voted-up':''}" onclick="vote('${item.id}','up')">
+          👍 <span id="vup-${item.id}">${v.up}</span>
+        </button>
+        <button class="vote-btn ${v.myVote==='down'?'voted-down':''}" onclick="vote('${item.id}','down')">
+          👎 <span id="vdn-${item.id}">${v.down}</span>
+        </button>
+        <button class="add-btn" onclick="event.stopPropagation();toggleModule('${item.id}')">
+          ${isSel?'✓ Added':'+ Add'}
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+// ════════════════════════════════════════════════
+// TOGGLE MODULE
+// ════════════════════════════════════════════════
+function toggleModule(id) {
+  if(state.selected.has(id)) state.selected.delete(id);
+  else state.selected.add(id);
+  // re-render just that card
+  const city = CITIES[state.city];
+  let item = null;
+  for(const cat of city.categories){
+    for(const it of cat.items){ if(it.id===id){item=it;break;} }
+    if(item) break;
+  }
+  if(!item) return;
+  const cardEl = document.getElementById('mod-'+id);
+  const isSel = state.selected.has(id);
+  if(isSel){
+    cardEl.classList.add('selected');
+    if(city.cls!=='hbg') cardEl.classList.add(city.cls+'-mod');
+  } else {
+    cardEl.classList.remove('selected',city.cls+'-mod');
+  }
+  cardEl.querySelector('.mod-check').innerHTML = isSel?'✓':'';
+  cardEl.querySelector('.add-btn').textContent = isSel?'✓ Added':'+ Add';
+  updateSummary();
+  drawMap();
+}
+
+// ════════════════════════════════════════════════
+// VOTING
+// ════════════════════════════════════════════════
+function vote(id, dir) {
+  const v = state.votes[id] || {up:0,down:0,myVote:null};
+  if(v.myVote===dir){ // undo
+    v[dir]--;v.myVote=null;
+  } else {
+    if(v.myVote){ v[v.myVote]--; }
+    v[dir]++;v.myVote=dir;
+  }
+  state.votes[id]=v;
+  const upEl=document.getElementById('vup-'+id);
+  const dnEl=document.getElementById('vdn-'+id);
+  if(upEl) upEl.textContent=v.up;
+  if(dnEl) dnEl.textContent=v.down;
+  // update btn classes
+  const card=document.getElementById('mod-'+id);
+  if(card){
+    card.querySelectorAll('.vote-btn').forEach(b=>{b.classList.remove('voted-up','voted-down');});
+    if(v.myVote==='up') card.querySelectorAll('.vote-btn')[0].classList.add('voted-up');
+    if(v.myVote==='down') card.querySelectorAll('.vote-btn')[1].classList.add('voted-down');
+  }
+  updateVotePanel();
+}
+
+// ════════════════════════════════════════════════
+// PRESETS
+// ════════════════════════════════════════════════
+function applyPreset(cityId, key) {
+  const city = CITIES[cityId];
+  const preset = city.presets[key];
+  state.selected.clear();
+  preset.ids.forEach(id=>state.selected.add(id));
+  // re-render
+  renderCity(cityId);
+  updateSummary();
+  drawMap();
+  // highlight active preset
+  document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('selected'));
+  const pb=document.getElementById(`preset-${cityId}-${key}`);
+  if(pb) pb.classList.add('selected');
+}
+
+// ════════════════════════════════════════════════
+// GET SELECTED ITEMS
+// ════════════════════════════════════════════════
+function getSelectedItems() {
+  if(!state.city) return [];
+  const city = CITIES[state.city];
+  const items = [];
+  for(const cat of city.categories)
+    for(const it of cat.items)
+      if(state.selected.has(it.id)) items.push(it);
+  return items;
+}
+
+// ════════════════════════════════════════════════
+// UPDATE SUMMARY
+// ════════════════════════════════════════════════
+function updateSummary() {
+  const city = state.city ? CITIES[state.city] : null;
+  const items = getSelectedItems();
+
+  // city name
+  document.getElementById('summary-city-name').textContent = city ? `${city.emoji} ${city.name} Trip` : 'Your Trip';
+  document.getElementById('summary-sub').textContent = items.length===0 ? 'Add stops to start building' : `${items.length} stop${items.length!==1?'s':''} selected · tap to adjust`;
+
+  // costs
+  let actCost=0, foodCost=0;
+  items.forEach(it=>{
+    if(it.category==='activity'||it.category==='evening') actCost+=it.cost;
+    else foodCost+=it.cost;
+  });
+  const gasCost = city ? city.gasCost : 0;
+  const parkCost = city ? (items.length>0?12:0) : 0;
+  const total = actCost+foodCost+gasCost+parkCost;
+
+  document.getElementById('cost-activities').textContent=`$${actCost}`;
+  document.getElementById('cost-food').textContent=`$${foodCost}`;
+  document.getElementById('cost-gas').textContent=`$${gasCost}`;
+  document.getElementById('cost-parking').textContent=`$${parkCost}`;
+  document.getElementById('cost-total').textContent=`$${total}`;
+
+  // XP
+  const xp = items.length===0 ? 0 : Math.min(10, Math.round(items.reduce((s,i)=>s+i.xp,0)/items.length*1.1));
+  const xpPct = xp*10;
+  document.getElementById('xp-score').textContent = items.length===0 ? '—' : `${xp}/10`;
+  document.getElementById('xp-bar').style.width=`${xpPct}%`;
+
+  // XP tags
+  const tags=[];
+  if(items.some(i=>i.category==='activity')) tags.push('🎭 Activities');
+  if(items.some(i=>i.category==='food')) tags.push('🍽️ Food');
+  if(items.some(i=>i.category==='evening')) tags.push('🎤 Nightlife');
+  if(items.some(i=>i.tags.includes('Photo Op'))) tags.push('📸 Photo Ops');
+  if(total<100) tags.push('💚 Budget-Friendly');
+  if(xp>=9) tags.push('🌟 Premium XP');
+  document.getElementById('xp-tags').innerHTML = tags.map(t=>`<span class="xp-tag">${t}</span>`).join('');
+
+  // Itinerary
+  const listEl = document.getElementById('itinerary-list');
+  if(items.length===0){
+    listEl.innerHTML=`<div class="empty-state"><span class="empty-icon">🗺️</span><p class="empty-text">Tap any activity card to add it to your itinerary.</p></div>`;
+  } else {
+    // sort by time
+    const sorted=[...items].sort((a,b)=>a.time.localeCompare(b.time));
+    listEl.innerHTML=sorted.map((it,i)=>`
+      <div class="itin-item">
+        <div class="itin-num">${i+1}</div>
+        <div class="itin-content">
+          <div class="itin-name">${it.icon} ${it.name}</div>
+          <div class="itin-meta">${it.time} · ${it.duration} · ${it.costLabel}</div>
+        </div>
+        <button class="itin-remove" onclick="toggleModule('${it.id}')" title="Remove">✕</button>
+      </div>
+    `).join('');
+  }
+
+  // Parking
+  const parkPanel = document.getElementById('parking-panel');
+  const parkList = document.getElementById('parking-list');
+  if(city && items.length>0){
+    parkPanel.style.display='block';
+    parkList.innerHTML=city.parking.map(p=>`
+      <div class="parking-item">
+        <span class="parking-badge">${p.badge}</span>
+        <div>
+          <div style="font-weight:600;font-size:12px;color:var(--text);margin-bottom:2px;">${p.name}</div>
+          <div class="parking-text">${p.note}</div>
+        </div>
+        <span class="parking-cost">${p.cost}</span>
+      </div>
+    `).join('');
+  } else {
+    parkPanel.style.display='none';
+  }
+
+  updateVotePanel();
+}
+
+function updateVotePanel() {
+  const items = getSelectedItems();
+  const votePanel = document.getElementById('vote-panel');
+  const voteList = document.getElementById('vote-list');
+  const allVoted = Object.entries(state.votes).filter(([id,v])=>v.up+v.down>0);
+  if(allVoted.length===0){votePanel.style.display='none';return;}
+  votePanel.style.display='block';
+  const maxVotes=Math.max(...allVoted.map(([_,v])=>v.up+v.down),1);
+  voteList.innerHTML=allVoted.sort((a,b)=>b[1].up-a[1].up).slice(0,6).map(([id,v])=>{
+    const item=getItemById(id);if(!item)return'';
+    const total=v.up+v.down;
+    const pct=total>0?Math.round(v.up/total*100):0;
+    const barW=Math.round(v.up/maxVotes*100);
+    return `
+      <div class="vote-item">
+        <span class="vote-item-name">${item.icon} ${item.name}</span>
+        <div class="vote-bar-track"><div class="vote-bar-fill" style="width:${barW}%"></div></div>
+        <span class="vote-num">${v.up}↑ ${v.down}↓</span>
+      </div>
+    `;
+  }).join('');
+}
+
+function getItemById(id) {
+  for(const cityData of Object.values(CITIES))
+    for(const cat of cityData.categories)
+      for(const it of cat.items)
+        if(it.id===id) return it;
+  return null;
+}
+
+// ════════════════════════════════════════════════
+// MAP (Canvas)
+// ════════════════════════════════════════════════
+const CITY_COORDS = {
+  hbg: [
+    {name:'Lock Haven',x:0.18,y:0.2,color:'#fff'},
+    {name:'Fort Hunter',x:0.35,y:0.38,id:'fort-hunter',color:'#f5c842'},
+    {name:'Greenbelt',x:0.42,y:0.48,id:'greenbelt',color:'#f5c842'},
+    {name:'Millworks',x:0.5,y:0.5,id:'millworks-lunch',color:'#f5c842'},
+    {name:'Zembie\'s',x:0.52,y:0.52,id:'zembie',color:'#f5c842'},
+    {name:'Fed Tap',x:0.51,y:0.51,id:'federal-tap',color:'#f5c842'},
+    {name:'Benaiahs',x:0.62,y:0.44,id:'benaiahs',color:'#f5c842'},
+    {name:'704 Lounge',x:0.48,y:0.46,id:'704-lounge',color:'#f5c842'},
+    {name:'Cinema',x:0.49,y:0.54,id:'midtown-cinema',color:'#f5c842'},
+  ],
+  philly: [
+    {name:'Lock Haven',x:0.1,y:0.15,color:'#fff'},
+    {name:'Reading Mkt',x:0.55,y:0.38,id:'reading-terminal',color:'#e85c6a'},
+    {name:'Magic Gardens',x:0.5,y:0.58,id:'magic-gardens',color:'#e85c6a'},
+    {name:'Illusions',x:0.58,y:0.36,id:'museum-illusions-phl',color:'#e85c6a'},
+    {name:'Conquer Ninja',x:0.72,y:0.42,id:'conquer-ninja',color:'#e85c6a'},
+    {name:'The Love.',x:0.44,y:0.38,id:'the-love',color:'#e85c6a'},
+    {name:'Harp & Crown',x:0.46,y:0.37,id:'harp-crown',color:'#e85c6a'},
+    {name:'South St',x:0.52,y:0.55,id:'south-street-crawl',color:'#e85c6a'},
+    {name:'Yakitori Boy',x:0.57,y:0.42,id:'yakitori-boy',color:'#e85c6a'},
+    {name:'VOIX Karaoke',x:0.78,y:0.28,id:'voix-karaoke',color:'#e85c6a'},
+    {name:'Italian Mkt',x:0.51,y:0.6,id:'italian-market',color:'#e85c6a'},
+  ],
+  pgh: [
+    {name:'Lock Haven',x:0.72,y:0.15,color:'#fff'},
+    {name:'Strip District',x:0.38,y:0.42,id:'strip-district',color:'#5b8df5'},
+    {name:'Phipps',x:0.4,y:0.58,id:'phipps',color:'#5b8df5'},
+    {name:'Warhol Museum',x:0.34,y:0.38,id:'warhol',color:'#5b8df5'},
+    {name:'Museum Illusions',x:0.33,y:0.36,id:'museum-illusions-pgh',color:'#5b8df5'},
+    {name:'Fig & Ash',x:0.32,y:0.32,id:'fig-ash',color:'#5b8df5'},
+    {name:'Altius',x:0.37,y:0.62,id:'altius',color:'#5b8df5'},
+    {name:'Primanti\'s',x:0.39,y:0.4,id:'primantis',color:'#5b8df5'},
+    {name:'Wanna Karaoke',x:0.34,y:0.34,id:'wanna-karaoke',color:'#5b8df5'},
+    {name:'Duquesne',x:0.36,y:0.6,id:'duquesne',color:'#5b8df5'},
+    {name:'Hi Sound',x:0.45,y:0.55,id:'hi-sound',color:'#5b8df5'},
+  ],
+  balt: [
+    {name:'Lock Haven',x:0.08,y:0.12,color:'#fff'},
+    {name:'National Aquarium',x:0.52,y:0.40,id:'national-aquarium',color:'#ff6b35'},
+    {name:'Inner Harbor',x:0.50,y:0.46,id:'inner-harbor',color:'#ff6b35'},
+    {name:'AVAM',x:0.47,y:0.55,id:'visionary-art',color:'#ff6b35'},
+    {name:'Top of World',x:0.54,y:0.42,id:'top-of-world',color:'#ff6b35'},
+    {name:"Nick's Fish",x:0.42,y:0.66,id:'nicks-fish',color:'#ff6b35'},
+    {name:'Ampersea',x:0.68,y:0.52,id:'ampersea',color:'#ff6b35'},
+    {name:'Balt Seafood',x:0.72,y:0.47,id:'balt-seafood',color:'#ff6b35'},
+    {name:"Cat's Eye",x:0.70,y:0.56,id:'cats-eye',color:'#ff6b35'},
+    {name:'Horse Saloon',x:0.66,y:0.60,id:'horse-saloon',color:'#ff6b35'},
+    {name:'Broadway KTV',x:0.74,y:0.50,id:'broadway-ktv',color:'#ff6b35'},
+  ]
+};
+
+function drawMap() {
+  const canvas=document.getElementById('map-canvas');
+  if(!canvas)return;
+  const W=canvas.offsetWidth, H=canvas.offsetHeight;
+  canvas.width=W;canvas.height=H;
+  const ctx=canvas.getContext('2d');
+  const city=state.city;
+  if(!city){drawEmptyMap(ctx,W,H);return;}
+
+  // BG
+  ctx.fillStyle='#0e1220';ctx.fillRect(0,0,W,H);
+  // Grid
+  ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+
+  const coords=CITY_COORDS[city]||[];
+  const selCoords=coords.filter(c=>!c.id||state.selected.has(c.id));
+  const homeCoord=coords[0];
+
+  // Draw route lines
+  if(selCoords.length>1){
+    ctx.strokeStyle=CITIES[city].color+'88';
+    ctx.lineWidth=2;ctx.setLineDash([6,4]);
+    ctx.beginPath();
+    selCoords.forEach((c,i)=>{
+      const x=c.x*W,y=c.y*H;
+      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    });
+    ctx.stroke();ctx.setLineDash([]);
+  }
+
+  // Draw Lock Haven arrow
+  if(homeCoord){
+    const hx=homeCoord.x*W, hy=homeCoord.y*H;
+    ctx.fillStyle='rgba(255,255,255,0.06)';
+    ctx.beginPath();ctx.arc(hx,hy,18,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(hx,hy,18,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle='#fff';ctx.font='bold 11px Syne,sans-serif';ctx.textAlign='center';
+    ctx.fillText('🏠',hx,hy+4);
+    ctx.font='bold 9px DM Mono,monospace';ctx.fillStyle='rgba(255,255,255,0.5)';
+    ctx.fillText('Lock Haven',hx,hy+24);
+  }
+
+  // Draw all stops
+  coords.forEach(c=>{
+    if(!c.id) return;
+    const x=c.x*W, y=c.y*H;
+    const isSel=state.selected.has(c.id);
+    // glow
+    if(isSel){
+      const grad=ctx.createRadialGradient(x,y,0,x,y,22);
+      grad.addColorStop(0,CITIES[city].color+'44');
+      grad.addColorStop(1,'transparent');
+      ctx.fillStyle=grad;ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill();
+    }
+    // dot
+    ctx.beginPath();ctx.arc(x,y,isSel?8:5,0,Math.PI*2);
+    ctx.fillStyle=isSel?CITIES[city].color:'rgba(255,255,255,0.2)';
+    ctx.fill();
+    if(isSel){
+      ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.arc(x,y,11,0,Math.PI*2);ctx.stroke();
+    }
+    // label
+    if(isSel){
+      ctx.fillStyle='rgba(255,255,255,0.85)';
+      ctx.font='bold 10px Syne,sans-serif';ctx.textAlign='center';
+      ctx.fillText(c.name,x,y-15);
+    }
+  });
+
+  // Update pills
+  const sel=getSelectedItems();
+  document.getElementById('map-route-label').textContent=sel.length>0?`${sel.length} stops in ${CITIES[city].name}`:`${CITIES[city].name} — Select stops`;
+  const timePill=document.getElementById('map-time-pill');
+  if(sel.length>1){
+    timePill.style.display='flex';
+    const hrs=Math.round(sel.reduce((s,i)=>{const m=parseInt(i.duration)||60;return s+m;},0)/60*10)/10;
+    document.getElementById('map-drive-time').textContent=`~${hrs}hrs in city`;
+  } else timePill.style.display='none';
+}
+
+function drawEmptyMap(ctx,W,H){
+  ctx.fillStyle='#0e1220';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(255,255,255,0.1)';
+  ctx.font='32px serif';ctx.textAlign='center';
+  ctx.fillText('🗺️',W/2,H/2-10);
+  ctx.font='12px DM Mono,monospace';ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.fillText('Choose a city to see route',W/2,H/2+20);
+}
+
+// ════════════════════════════════════════════════
+// URL STATE — encode/decode trip into shareable hash
+// ════════════════════════════════════════════════
+
+function encodeStateToHash() {
+  if (!state.city) return '';
+  const stops = [...state.selected].join(',');
+  const voteEntries = Object.entries(state.votes)
+    .filter(([,v]) => v.up + v.down > 0)
+    .map(([id,v]) => `${id}:${v.up}:${v.down}`)
+    .join(';');
+  const payload = {
+    c: state.city,
+    s: stops || '',
+    v: voteEntries || ''
+  };
+  try {
+    return btoa(encodeURIComponent(JSON.stringify(payload)));
+  } catch(e) { return ''; }
+}
+
+function decodeHashToState(hash) {
+  if (!hash || hash.length < 3) return null;
+  try {
+    const raw = hash.startsWith('#') ? hash.slice(1) : hash;
+    const payload = JSON.parse(decodeURIComponent(atob(raw)));
+    const result = { city: payload.c, selected: new Set(), votes: {} };
+    if (payload.s) payload.s.split(',').filter(Boolean).forEach(id => result.selected.add(id));
+    if (payload.v) payload.v.split(';').filter(Boolean).forEach(entry => {
+      const [id, up, down] = entry.split(':');
+      result.votes[id] = { up: +up||0, down: +down||0, myVote: null };
+    });
+    return result;
+  } catch(e) { return null; }
+}
+
+function pushStateToURL() {
+  const hash = encodeStateToHash();
+  if (hash) {
+    history.replaceState(null, '', '#' + hash);
+  }
+}
+
+function loadStateFromURL() {
+  const hash = window.location.hash;
+  if (!hash || hash.length < 5) return false;
+  const decoded = decodeHashToState(hash.slice(1));
+  if (!decoded || !CITIES[decoded.city]) return false;
+  state.city = decoded.city;
+  state.selected = decoded.selected;
+  state.votes = decoded.votes;
+  return true;
+}
+
+// ════════════════════════════════════════════════
+// SHARE MODAL
+// ════════════════════════════════════════════════
+
+function showShareModal() {
+  const city = state.city ? CITIES[state.city] : null;
+  const items = getSelectedItems();
+  pushStateToURL();
+  const url = window.location.href;
+
+  const modal = document.getElementById('share-modal');
+  document.getElementById('share-url-input').value = url;
+
+  // Build preview
+  const xp = items.length > 0 ? Math.min(10, Math.round(items.reduce((s,i)=>s+i.xp,0)/items.length*1.1)) : 0;
+  const totalCost = items.reduce((s,i)=>s+i.cost,0) + (city ? city.gasCost+12 : 0);
+  const preview = document.getElementById('share-preview');
+  if (city && items.length > 0) {
+    preview.innerHTML = `
+      <div style="background:var(--surface2);border-radius:12px;padding:16px;margin-bottom:16px;text-align:left;">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin-bottom:6px;">${city.emoji} ${city.name} — Angie's 24th 🎂</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:12px;">
+          <span>⭐ ${xp}/10 XP</span><span>💰 ~$${totalCost}/person</span><span>📍 ${items.length} stops</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          ${[...items].sort((a,b)=>a.time.localeCompare(b.time)).map(it=>`
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+              <span>${it.icon}</span>
+              <span style="color:var(--text);">${it.name}</span>
+              <span style="margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);">${it.time}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else {
+    preview.innerHTML = `<div style="color:var(--muted);font-size:13px;text-align:center;padding:20px;">Add stops to your trip before sharing!</div>`;
+  }
+
+  modal.classList.add('visible');
+}
+
+function closeShareModal() {
+  document.getElementById('share-modal').classList.remove('visible');
+}
+
+function copyShareURL() {
+  const input = document.getElementById('share-url-input');
+  input.select();
+  try {
+    navigator.clipboard.writeText(input.value).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      btn.style.background = 'var(--green)';
+      btn.style.color = '#000';
+      setTimeout(() => {
+        btn.textContent = 'Copy Link';
+        btn.style.background = 'var(--accent)';
+        btn.style.color = '#000';
+      }, 2500);
+    });
+  } catch(e) {
+    document.execCommand('copy');
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.textContent = 'Copy Link'; }, 2500);
+  }
+}
+
+// ════════════════════════════════════════════════
+// EXPORT / PRINT VIEW
+// ════════════════════════════════════════════════
+function exportItinerary() {
+  const city = state.city ? CITIES[state.city] : null;
+  const items = getSelectedItems();
+  if(!city||items.length===0){alert('Add some stops first!');return;}
+
+  const sorted=[...items].sort((a,b)=>a.time.localeCompare(b.time));
+  const totalCost = items.reduce((s,i)=>s+i.cost,0)+city.gasCost+12;
+  const xp = Math.min(10,Math.round(items.reduce((s,i)=>s+i.xp,0)/items.length*1.1));
+  pushStateToURL();
+  const shareURL = window.location.href;
+
+  const html=`
+    <div class="print-title">${city.emoji} ${city.name} — Angie's 24th 🎂</div>
+    <div class="print-subtitle" style="display:flex;gap:20px;flex-wrap:wrap;">
+      <span>📅 Custom Itinerary</span>
+      <span>⭐ ${xp}/10 Experience</span>
+      <span>💰 ~$${totalCost}/person</span>
+      <span>👥 2–4 people</span>
+    </div>
+    ${sorted.map((it,i)=>`
+      <div class="print-stop">
+        <div class="print-num" style="background:${city.color}">${i+1}</div>
+        <div>
+          <div class="print-stop-name">${it.icon} ${it.name}</div>
+          <div class="print-stop-desc">${it.desc}</div>
+          <div class="print-stop-meta">
+            <span class="print-meta-item">🕐 ${it.time}</span>
+            <span class="print-meta-item">⏱ ${it.duration}</span>
+            <span class="print-meta-item">💰 ${it.costLabel}</span>
+            <span class="print-meta-item">🅿️ ${it.parkingNote}</span>
+          </div>
+        </div>
+      </div>
+    `).join('')}
+    <div class="print-stop" style="background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);">
+      <div class="print-num" style="background:#333;font-size:20px;">💰</div>
+      <div>
+        <div class="print-stop-name">Total Trip Cost Breakdown</div>
+        <div class="print-stop-meta" style="flex-direction:column;gap:6px;">
+          <span class="print-meta-item">🎭 Activities: $${items.filter(i=>i.category!=='food').reduce((s,i)=>s+i.cost,0)}</span>
+          <span class="print-meta-item">🍽️ Food & Drinks: $${items.filter(i=>i.category==='food').reduce((s,i)=>s+i.cost,0)}</span>
+          <span class="print-meta-item">🚗 Gas from Lock Haven: $${city.gasCost}</span>
+          <span class="print-meta-item">🅿️ Estimated Parking: $12</span>
+          <span class="print-meta-item" style="color:var(--accent);font-size:14px;font-weight:700;margin-top:4px;">Total: ~$${totalCost} per person</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--surface2);border-radius:12px;padding:16px;margin-top:16px;">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">🔗 Share This Itinerary</div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;word-break:break-all;color:var(--accent);">${shareURL}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:8px;">Paste this URL to share your exact trip selection with friends!</div>
+    </div>
+    <div style="text-align:center;margin-top:32px;color:var(--muted);font-size:13px;">
+      Made with 💛 for Angie's 24th Birthday · Share with the squad!
+    </div>
+  `;
+  document.getElementById('print-content').innerHTML=html;
+  document.getElementById('print-overlay').classList.add('visible');
+}
+function closePrint(){document.getElementById('print-overlay').classList.remove('visible');}
+
+// ════════════════════════════════════════════════
+// MOBILE
+// ════════════════════════════════════════════════
+let panelVisible=false;
+function togglePanel(){
+  const rp=document.getElementById('right-panel');
+  panelVisible=!panelVisible;
+  rp.style.display=panelVisible?'flex':'none';
+}
+// ════════════════════════════════════════════════
+// INIT — restore from URL or show hero
+// ════════════════════════════════════════════════
+window.addEventListener('resize', ()=>{ if(state.city) drawMap(); });
+
+// Try to restore from URL hash on load
+(function init() {
+  const restored = loadStateFromURL();
+  if (restored && state.city) {
+    document.getElementById('hero').style.display = 'none';
+    document.getElementById('app').classList.add('visible');
+    ['hbg','philly','pgh','balt'].forEach(c => {
+      document.getElementById('tab-'+c).className = 'city-tab';
+    });
+    const city = CITIES[state.city];
+    document.getElementById('tab-'+state.city).classList.add(city.tabActiveCls);
+    renderCity(state.city);
+    updateSummary();
+    drawMap();
+    // Show a "shared trip loaded" toast
+    showToast(`🎉 Shared trip loaded — ${city.name}!`);
+  } else {
+    drawMap();
+  }
+})();
+
+// Auto-save state to URL whenever a selection changes (debounced)
+let urlDebounce;
+const _origToggle = toggleModule;
+toggleModule = function(id) {
+  _origToggle(id);
+  clearTimeout(urlDebounce);
+  urlDebounce = setTimeout(pushStateToURL, 400);
+};
+
+// ════════════════════════════════════════════════
+// TOAST NOTIFICATION
+// ════════════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('visible');
+  setTimeout(() => t.classList.remove('visible'), 3500);
+}
+</script>
+</body>
+</html>
