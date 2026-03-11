@@ -1,0 +1,870 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>✦ Sonia's 24th · A Golden Affair</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080810;--s1:#0f0f1c;--s2:#161626;--bd:rgba(255,255,255,.06);--tx:#f5f0ea;--mu:rgba(245,240,234,.42);--ac:#c9a96e;--acl:#e8cfa0;--gr:#42d9a0;--pgh:#5b8df5;--balt:#ff6b35;--stc:#a78bfa;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Lora',serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:rgba(201,169,110,.2);border-radius:2px;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:60px 20px 80px;}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 120% 60% at 50% 0%,rgba(201,169,110,.08) 0%,transparent 60%),radial-gradient(ellipse 80% 40% at 20% 80%,rgba(212,116,138,.06) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 70%,rgba(91,141,245,.05) 0%,transparent 50%);}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black,transparent);}
+.horb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);}
+.horb1{width:500px;height:500px;background:radial-gradient(circle,rgba(201,169,110,.15) 0%,transparent 70%);top:-100px;left:50%;transform:translateX(-50%);}
+.horb2{width:300px;height:300px;background:radial-gradient(circle,rgba(212,116,138,.1) 0%,transparent 70%);bottom:100px;left:10%;}
+.horb3{width:250px;height:250px;background:radial-gradient(circle,rgba(91,141,245,.08) 0%,transparent 70%);bottom:80px;right:10%;}
+.hsparks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2;}
+.spark{position:absolute;width:2px;height:2px;background:var(--ac);border-radius:50%;animation:sparkF linear infinite;opacity:0;}
+@keyframes sparkF{0%{opacity:0;transform:translateY(0) scale(0);}20%{opacity:1;transform:translateY(-20px) scale(1);}80%{opacity:.4;}100%{opacity:0;transform:translateY(-80px) scale(.3);}}
+.hspot{position:absolute;inset:0;pointer-events:none;z-index:0;}
+.hspot::before{content:"";position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(ellipse 55% 55% at 50% 30%,rgba(201,169,110,.18) 0%,rgba(201,169,110,.06) 40%,transparent 70%);animation:spulse 5s ease-in-out infinite;}
+@keyframes spulse{0%,100%{opacity:.7;transform:translateX(-50%) scale(1);}50%{opacity:1;transform:translateX(-50%) scale(1.08);}}
+.heyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ac);margin-bottom:32px;animation:fadeUp .8s ease both;position:relative;z-index:3;}
+.heyebrow::before,.heyebrow::after{content:"";flex:1;width:40px;height:1px;background:linear-gradient(to right,transparent,var(--ac));}
+.heyebrow::after{background:linear-gradient(to left,transparent,var(--ac));}
+.htitle{font-family:'Lora',serif;font-size:clamp(52px,8vw,100px);font-weight:400;font-style:italic;line-height:1;color:var(--tx);position:relative;z-index:3;animation:fadeUp .8s .12s ease both;margin-bottom:8px;}
+.htitle strong{font-family:'Syne',sans-serif;font-style:normal;font-weight:800;font-size:.55em;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--acl);margin-bottom:4px;}
+.htitle .num{font-family:'Syne',sans-serif;font-style:normal;font-weight:800;color:var(--ac);font-size:1.1em;letter-spacing:-.04em;}
+.hdiv{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--ac),transparent);margin:24px auto;position:relative;z-index:3;animation:fadeUp .8s .2s ease both;}
+.hdiv::before{content:"✦";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--ac);font-size:10px;background:var(--bg);padding:0 8px;}
+.hsub{font-family:'Lora',serif;font-size:16px;line-height:1.8;font-style:italic;color:var(--mu);max-width:460px;animation:fadeUp .8s .25s ease both;position:relative;z-index:3;}
+.hcities{display:flex;gap:12px;margin-top:48px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s .35s ease both;position:relative;z-index:3;}
+.hcbtn{padding:14px 28px;border-radius:10px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;}
+.hcbtn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.5);}
+.btn-pgh{background:linear-gradient(135deg,#5b8df5,#3a6ad4);color:#fff;}
+.btn-balt{background:linear-gradient(135deg,#ff6b35,#d44f1a);color:#fff;}
+.btn-stc{background:linear-gradient(135deg,#a78bfa,#7c5cbf);color:#fff;}
+.htagline{margin-top:32px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,110,.4);animation:fadeUp .8s .45s ease both;position:relative;z-index:3;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.app{display:none;min-height:100vh;flex-direction:column;}
+.app.on{display:flex;}
+.nav{position:sticky;top:0;z-index:200;background:rgba(13,13,20,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 20px;height:60px;gap:12px;}
+.nlogo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--tx);flex-shrink:0;}
+.nlogo span{color:var(--ac);}
+.ntabs{display:flex;gap:4px;margin-left:auto;}
+.ctab{padding:7px 14px;border-radius:7px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;background:transparent;color:var(--mu);transition:all .2s;}
+.ctab:hover{color:var(--tx);background:var(--s2);}
+.ctab.on-pgh{background:rgba(91,141,245,.15);border-color:rgba(91,141,245,.3);color:var(--pgh);}
+.ctab.on-balt{background:rgba(255,107,53,.15);border-color:rgba(255,107,53,.3);color:var(--balt);}
+.ctab.on-stc{background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.3);color:var(--stc);}
+.nbtn{padding:7px 14px;border-radius:7px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;border:1px solid var(--bd);background:transparent;color:var(--mu);cursor:pointer;transition:all .2s;}
+.nbtn:hover{color:var(--tx);}
+.nbtn.gold{background:var(--ac);color:#0d0d14;border-color:var(--ac);}
+.nbtn.gold:hover{background:#ffd966;}
+.cols{display:grid;grid-template-columns:1fr 320px;flex:1;align-items:start;}
+@media(max-width:1100px){.cols{grid-template-columns:1fr;}}
+.lpanel{overflow-y:auto;max-height:calc(100vh - 60px);}
+.mapsticky{position:sticky;top:0;z-index:10;background:var(--s2);border-bottom:1px solid var(--bd);}
+.mapbox{height:155px;position:relative;}
+#map-canvas{width:100%;height:100%;display:block;}
+.mappill{position:absolute;top:8px;left:8px;background:rgba(8,8,16,.85);backdrop-filter:blur(8px);border:1px solid var(--bd);border-radius:6px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:var(--tx);display:flex;align-items:center;gap:5px;}
+.mapgreen{width:6px;height:6px;border-radius:50%;background:var(--gr);}
+.lcontent{padding:20px 24px;}
+.rpanel{background:var(--s1);border-left:1px solid var(--bd);position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;}
+.stitle{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.stitle::before{content:"";width:20px;height:2px;background:currentColor;}
+.pbar{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.pbar::-webkit-scrollbar{display:none;}
+.pbtn{flex:0 0 auto;min-width:138px;padding:10px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--s2);cursor:pointer;text-align:left;transition:all .2s;}
+.pbtn:hover{border-color:rgba(201,169,110,.4);}
+.pbtn.active{border-color:var(--ac);background:rgba(201,169,110,.08);}
+.plabel{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:3px;}
+.pstars{color:var(--ac);}
+.pname{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:var(--tx);margin-bottom:2px;}
+.ptag{font-size:10px;color:var(--mu);line-height:1.3;}
+.pprice{font-family:'DM Mono',monospace;font-size:10px;color:var(--ac);margin-top:4px;}
+.msec{margin-bottom:28px;}
+.mcat{margin-bottom:18px;}
+.cathdr{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);}
+.catdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.mgrid{display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;}
+.mgrid::-webkit-scrollbar{display:none;}
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden;flex:0 0 220px;display:flex;flex-direction:column;user-select:none;}
+.card::before{content:"";position:absolute;top:0;left:0;bottom:0;width:3px;opacity:0;transition:opacity .2s;background:var(--ac);}
+.card.sel::before{opacity:1;}
+.card.pgh-m::before{background:var(--pgh);}
+.card.balt-m::before{background:var(--balt);}
+.card.stc-m::before{background:var(--stc);}
+.card:hover{border-color:rgba(255,255,255,.15);}
+.card.sel{border-color:rgba(201,169,110,.4);background:rgba(201,169,110,.05);}
+.card.sel.pgh-m{border-color:rgba(91,141,245,.4);background:rgba(91,141,245,.05);}
+.card.sel.balt-m{border-color:rgba(255,107,53,.4);background:rgba(255,107,53,.05);}
+.card.sel.stc-m{border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.05);}
+.ctop{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.cicon{font-size:20px;flex-shrink:0;}
+.cinfo{flex:1;min-width:0;}
+.cname{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ctype{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;color:var(--mu);}
+.cchk{width:18px;height:18px;border-radius:4px;border:1px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .2s;}
+.card.sel .cchk{background:var(--ac);border-color:var(--ac);color:#000;}
+.card.sel.pgh-m .cchk{background:var(--pgh);border-color:var(--pgh);color:#fff;}
+.card.sel.balt-m .cchk{background:var(--balt);border-color:var(--balt);color:#fff;}
+.card.sel.stc-m .cchk{background:var(--stc);border-color:var(--stc);color:#fff;}
+.cdesc{font-size:11px;color:var(--mu);line-height:1.4;margin-bottom:8px;flex:1;}
+.cmeta{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:8px;}
+.cbadge{font-family:'DM Mono',monospace;font-size:9px;padding:2px 5px;border-radius:3px;background:rgba(255,255,255,.05);color:var(--mu);border:1px solid var(--bd);white-space:nowrap;}
+.ccost{font-family:'DM Mono',monospace;font-size:10px;color:var(--gr);font-weight:600;margin-left:auto;}
+.cstars{font-size:10px;color:var(--ac);}
+.cacts{display:flex;align-items:center;gap:5px;padding-top:8px;border-top:1px solid var(--bd);margin-top:auto;}
+.vbtn{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:4px;padding:3px 6px;font-size:10px;color:var(--mu);cursor:pointer;display:flex;align-items:center;gap:2px;font-family:'DM Mono',monospace;}
+.vbtn:hover{background:rgba(255,255,255,.09);}
+.vbtn.up{background:rgba(66,217,160,.15);border-color:rgba(66,217,160,.4);color:var(--gr);}
+.vbtn.dn{background:rgba(232,92,106,.15);border-color:rgba(232,92,106,.4);color:#e85c6a;}
+.clink{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);text-decoration:none;border:1px solid var(--bd);border-radius:4px;padding:3px 6px;background:rgba(255,255,255,.04);white-space:nowrap;}
+.clink:hover{color:var(--ac);border-color:rgba(201,169,110,.4);}
+.abtn{margin-left:auto;background:transparent;border:1px solid var(--bd);border-radius:4px;padding:3px 8px;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:var(--mu);cursor:pointer;white-space:nowrap;transition:all .15s;}
+.card.sel .abtn{background:var(--ac);border-color:var(--ac);color:#000;}
+.card.sel.pgh-m .abtn{background:var(--pgh);border-color:var(--pgh);color:#fff;}
+.card.sel.balt-m .abtn{background:var(--balt);border-color:var(--balt);color:#fff;}
+.card.sel.stc-m .abtn{background:var(--stc);border-color:var(--stc);color:#fff;}
+.rinner{padding:0 0 20px;}
+.rhdr{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 4px;}
+.rtitle{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;}
+.rsub{font-size:12px;color:var(--mu);padding:0 18px 14px;}
+.rbody{padding:0 18px;}
+.xpbox{background:var(--s2);border-radius:12px;padding:14px;margin-bottom:14px;}
+.xphdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.xplbl{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
+.xpval{font-family:'DM Mono',monospace;font-size:20px;color:var(--ac);}
+.xptrack{height:7px;background:var(--bg);border-radius:50px;overflow:hidden;margin-bottom:8px;}
+.xpfill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--pgh),var(--ac),var(--gr));transition:width .5s cubic-bezier(.34,1.56,.64,1);}
+.xptags{display:flex;gap:5px;flex-wrap:wrap;}
+.xptag{font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:50px;background:rgba(255,255,255,.05);color:var(--mu);border:1px solid var(--bd);}
+.costbox{background:var(--s2);border-radius:12px;padding:14px;margin-bottom:14px;}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--bd);font-size:12px;}
+.crow:last-child{border-bottom:none;padding-bottom:0;}
+.clbl{color:var(--mu);}
+.cval{font-family:'DM Mono',monospace;color:var(--gr);font-size:12px;}
+.ctotalrow{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:10px;padding:12px 14px;margin-top:10px;}
+.ctotlbl{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;}
+.ctotval{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--ac);}
+.ilist{margin-bottom:14px;}
+.iitem{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--bd);}
+.iitem:last-child{border-bottom:none;}
+.inum{width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:9px;flex-shrink:0;color:var(--mu);}
+.ibody{flex:1;min-width:0;}
+.iname{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;margin-bottom:2px;}
+.imeta{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);}
+.irm{background:none;border:none;color:var(--mu);cursor:pointer;font-size:13px;padding:3px;flex-shrink:0;}
+.irm:hover{color:#e85c6a;}
+.parkbox{background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.18);border-radius:12px;padding:12px;margin-bottom:14px;}
+.parktitle{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin-bottom:8px;}
+.parkitem{display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid rgba(201,169,110,.08);font-size:11px;}
+.parkitem:last-child{border-bottom:none;}
+.pbadge{background:rgba(201,169,110,.15);border-radius:3px;padding:1px 6px;font-family:'DM Mono',monospace;font-size:9px;color:var(--ac);flex-shrink:0;white-space:nowrap;}
+.ptext{color:var(--mu);line-height:1.4;flex:1;}
+.pcost{font-family:'DM Mono',monospace;font-size:10px;color:var(--gr);flex-shrink:0;}
+.votebox{background:var(--s2);border-radius:12px;padding:14px;margin-bottom:14px;}
+.votetitle{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:10px;}
+.vrow{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
+.vname{font-size:11px;color:var(--tx);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vtrack{flex:2;height:5px;background:var(--bg);border-radius:50px;overflow:hidden;}
+.vfill{height:100%;border-radius:50px;background:var(--ac);transition:width .3s;}
+.vnum{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);flex-shrink:0;}
+.expbtn{width:100%;padding:13px;background:var(--ac);border:none;border-radius:10px;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#0d0d14;cursor:pointer;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.expbtn:hover{background:#ffd966;}
+.empty{text-align:center;padding:32px 16px;color:var(--mu);}
+.emptyico{font-size:36px;display:block;margin-bottom:10px;opacity:.4;}
+.emptytxt{font-size:12px;line-height:1.6;}
+.cban{border-radius:14px;padding:24px;margin-bottom:24px;}
+.cb-pgh{background:linear-gradient(135deg,#0e1628,#1a2e50);}
+.cb-balt{background:linear-gradient(135deg,#1a0a00,#2d1200);}
+.cb-stc{background:linear-gradient(135deg,#120a2e,#1e1040);}
+.cbtop{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.cbname{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:4px;}
+.cbsub{font-size:13px;color:rgba(255,255,255,.5);}
+.cbbadges{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;}
+.cbbadge{padding:4px 10px;border-radius:50px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:pulse 2s infinite;display:inline-block;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--s1);border:1px solid rgba(66,217,160,.3);border-radius:10px;padding:10px 20px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gr);z-index:9999;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;opacity:0;pointer-events:none;}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1;}
+.movl{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px;}
+.movl.on{display:flex;}
+.mbox{background:var(--s1);border:1px solid rgba(255,255,255,.1);border-radius:18px;width:100%;max-width:500px;overflow:hidden;}
+.mhdr{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--bd);}
+.mtitle{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;}
+.mclose{background:rgba(255,255,255,.06);border:1px solid var(--bd);border-radius:7px;padding:5px 12px;color:var(--mu);cursor:pointer;font-size:13px;}
+.mbody{padding:18px 20px;}
+.provl{display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;overflow-y:auto;padding:32px;}
+.provl.on{display:block;}
+.prclose{position:fixed;top:16px;right:16px;background:var(--s1);border:1px solid var(--bd);border-radius:7px;padding:6px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--mu);cursor:pointer;}
+.prbody{max-width:680px;margin:0 auto;}
+.prtitle{font-family:'Syne',sans-serif;font-weight:800;font-size:38px;margin-bottom:4px;}
+.prsub{font-size:14px;color:var(--mu);margin-bottom:32px;}
+.prstop{display:flex;gap:16px;margin-bottom:22px;padding:20px;background:var(--s1);border-radius:14px;}
+.prnum{width:36px;height:36px;border-radius:8px;background:var(--ac);color:#000;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;flex-shrink:0;}
+.prsname{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px;}
+.prsdesc{font-size:12px;color:var(--mu);line-height:1.5;}
+.prsmeta{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;}
+.prm{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);}
+@media(max-width:768px){.cols{grid-template-columns:1fr;}.rpanel{position:static;height:auto;border-left:none;border-top:1px solid var(--bd);}.mapbox{height:120px;}}
+</style></head><body>
+<section class="hero" id="hero">
+  <div class="hbg"></div><div class="hgrid"></div><div class="hspot"></div>
+  <div class="horb horb1"></div><div class="horb horb2"></div><div class="horb horb3"></div>
+  <div class="hsparks" id="hsparks"></div>
+  <div class="heyebrow">You're Invited &nbsp;✦&nbsp; A Celebration</div>
+  <h1 class="htitle"><strong>Sonia's</strong><span class="num">24</span>th</h1>
+  <div class="hdiv"></div>
+  <p class="hsub">A golden affair for a radiant woman. Choose your city, build the perfect day.</p>
+  <div class="hcities">
+    <button class="hcbtn btn-pgh" onclick="openCity('pgh')">🌉 Pittsburgh <span style="opacity:.55;font-size:11px;margin-left:6px">~3.5hr</span></button>
+    <button class="hcbtn btn-balt" onclick="openCity('balt')">🦀 Baltimore <span style="opacity:.55;font-size:11px;margin-left:6px">~3hr</span></button>
+    <button class="hcbtn btn-stc" onclick="openCity('stc')">🎓 State College <span style="opacity:.55;font-size:11px;margin-left:6px">~1hr</span></button>
+  </div>
+  <p class="htagline">Select a destination to begin planning ✦</p>
+</section>
+<div class="app" id="app">
+  <nav class="nav">
+    <div class="nlogo">✦ <span>Sonia's 24th</span></div>
+    <button class="nbtn" id="back-btn" onclick="goHome()">← Back</button>
+    <div class="ntabs">
+      <button class="ctab" id="tab-pgh" onclick="openCity('pgh')">🌉 PGH</button>
+      <button class="ctab" id="tab-balt" onclick="openCity('balt')">🦀 BALT</button>
+      <button class="ctab" id="tab-stc" onclick="openCity('stc')">🎓 STC</button>
+    </div>
+    <button class="nbtn gold" id="share-btn" onclick="doShare()">🔗 Share</button>
+  </nav>
+  <div class="cols">
+    <div class="lpanel">
+      <div class="mapsticky"><div class="mapbox"><canvas id="map-canvas"></canvas>
+        <div class="mappill"><span class="mapgreen"></span><span id="map-label">Select stops to see route</span></div>
+      </div></div>
+      <div class="lcontent"><div id="city-content"></div></div>
+    </div>
+    <div class="rpanel">
+      <div class="rinner">
+        <div class="rhdr">
+          <div class="rtitle" id="rcity">Your Trip</div>
+          <div style="display:flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:10px;color:var(--mu)"><span class="ldot"></span>LIVE</div>
+        </div>
+        <div class="rsub" id="rsub">Add stops to start building</div>
+        <div class="rbody">
+          <div class="xpbox">
+            <div class="xphdr"><span class="xplbl">Experience Score</span><span class="xpval" id="xp-score">—</span></div>
+            <div class="xptrack"><div class="xpfill" id="xp-bar" style="width:0%"></div></div>
+            <div class="xptags" id="xp-tags"></div>
+          </div>
+          <div class="costbox">
+            <div class="crow"><span class="clbl">🎭 Activities</span><span class="cval" id="c-act">$0</span></div>
+            <div class="crow"><span class="clbl">🍽️ Food &amp; Drinks</span><span class="cval" id="c-food">$0</span></div>
+            <div class="crow"><span class="clbl">🚗 Gas (from Lock Haven)</span><span class="cval" id="c-gas">$0</span></div>
+            <div class="crow"><span class="clbl">🅿️ Parking (est.)</span><span class="cval" id="c-park">$0</span></div>
+            <div class="ctotalrow"><span class="ctotlbl">Total / person</span><span class="ctotval" id="c-total">$0</span></div>
+          </div>
+          <div class="stitle">Your Itinerary</div>
+          <div class="ilist" id="itin-list"><div class="empty"><span class="emptyico">🗺️</span><p class="emptytxt">Tap any stop to add it.</p></div></div>
+          <div class="parkbox" id="park-panel" style="display:none"><div class="parktitle">🅿️ Parking Tips</div><div id="park-list"></div></div>
+          <div class="votebox" id="vote-panel" style="display:none"><div class="votetitle">Group Votes</div><div id="vote-list"></div></div>
+          <button class="expbtn" id="export-btn" onclick="doPrint()">📋 View Full Itinerary</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="movl" id="share-modal"><div class="mbox"><div class="mhdr"><div class="mtitle">✦ Share This Trip</div><button class="mclose" id="share-close" onclick="document.getElementById('share-modal').classList.remove('on')">✕ Close</button></div><div class="mbody" id="share-body"></div></div></div>
+<div class="provl" id="print-overlay"><button class="prclose" id="print-close" onclick="document.getElementById('print-overlay').classList.remove('on')">✕ Close</button><div class="prbody" id="print-body"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+// ═══════════════════════════════════
+// DATA
+// ═══════════════════════════════════
+var CITIES = {
+  pgh: {
+    name:'Pittsburgh', emoji:'🌉', tagline:'The Jaw-Dropper',
+    color:'#5b8df5', cls:'pgh', tcls:'on-pgh', bcls:'cb-pgh',
+    drive:'~3.5 hrs from Lock Haven', gas:32,
+    parking:[
+      {badge:'📱 SMART', name:'SpotHero / PGH City App', note:'Pre-book North Shore & Strip District garages', cost:'$5-12/day'},
+      {badge:'⭐ CLOSE', name:'North Shore Lots', note:'Walk to Museum of Illusions & waterfront', cost:'$8-15/day'},
+      {badge:'🆓 FREE', name:'Schenley Dr (Phipps)', note:'Very limited street parking, arrive by 9:30am', cost:'Free-$3'},
+      {badge:'💚 BEST', name:'Grandview Ave (Altius)', note:'Free street parking with insane skyline views', cost:'Free'}
+    ],
+    presets:{
+      p5:{label:'5/10', stars:'★★★☆☆', name:'PGH Casual', tagline:'Easy birthday day', price:'~$80', ids:['strip-district','primantis','wanna-karaoke']},
+      p8:{label:'8/10', stars:'★★★★☆', name:'PGH Birthday', tagline:'Culture + incredible food', price:'~$145', ids:['phipps','museum-illusions-pgh','fig-ash','duquesne']},
+      p10:{label:'10/10', stars:'★★★★★', name:'Full Pittsburgh', tagline:'The ultimate jaw-dropper', price:'~$210+', ids:['phipps','warhol','museum-illusions-pgh','fig-ash','altius','wanna-karaoke']}
+    },
+    mapCoords:{
+      home:{x:.06,y:.14},
+      stops:[
+        {id:'phipps',name:'Phipps',x:.50,y:.70},{id:'strip-district',name:'Strip Dist.',x:.56,y:.44},
+        {id:'warhol',name:'Warhol',x:.38,y:.30},{id:'museum-illusions-pgh',name:'MOI',x:.36,y:.26},
+        {id:'fig-ash',name:'Fig & Ash',x:.40,y:.23},{id:'altius',name:'Altius',x:.28,y:.64},
+        {id:'primantis',name:"Primanti's",x:.58,y:.40},{id:'wanna-karaoke',name:'Karaoke',x:.34,y:.28},
+        {id:'duquesne',name:'Incline',x:.30,y:.60},{id:'hi-sound',name:'Hi Sound',x:.72,y:.74}
+      ]
+    },
+    categories:[
+      {name:'Morning Activities', color:'#42d9a0', items:[
+        {id:'phipps', icon:'🌺', name:'Phipps Conservatory', type:'Botanical Garden',
+          desc:'Victorian glasshouse with 14 stunning rooms of orchids and seasonal plants. Pittsburgh crown jewel.',
+          cost:22, costLabel:'$19-22', stars:'★★★★★', duration:'2 hrs', time:'10:00 AM', xp:9, cat:'activity',
+          address:'1 Schenley Dr, Pittsburgh, PA 15213', url:'https://www.phipps.conservatory.org'},
+        {id:'strip-district', icon:'🥨', name:'Strip District Morning', type:'Market Neighborhood',
+          desc:"Pittsburgh's bustling market district — pierogies, fresh pasta, coffee. Free to explore.",
+          cost:15, costLabel:'$5-25', stars:'★★★★☆', duration:'1.5 hrs', time:'9:30 AM', xp:6, cat:'activity',
+          address:'Penn Ave & 17th St, Pittsburgh, PA 15222', url:'https://www.visitpittsburgh.com/neighborhoods/strip-district/'},
+        {id:'warhol', icon:'🎨', name:'Andy Warhol Museum', type:'Pop Art Museum',
+          desc:'7 floors of Pittsburgh-born Warhol. Unique, fascinating — a cultural must-do.',
+          cost:22, costLabel:'$18-25', stars:'★★★★☆', duration:'1.5 hrs', time:'11:00 AM', xp:8, cat:'activity',
+          address:'117 Sandusky St, Pittsburgh, PA 15212', url:'https://www.warhol.org'},
+        {id:'museum-illusions-pgh', icon:'🪞', name:'Museum of Illusions', type:'Interactive Museum',
+          desc:'Optical illusion rooms built for group photos. Budget-friendly and a guaranteed blast.',
+          cost:20, costLabel:'$18-22', stars:'★★★★★', duration:'1 hr', time:'12:30 PM', xp:7, cat:'activity',
+          address:'267 North Shore Dr, Pittsburgh, PA 15212', url:'https://pittsburgh.museumofillusions.us'}
+      ]},
+      {name:'Food & Drink', color:'#e85c6a', items:[
+        {id:'primantis', icon:'🥪', name:"Primanti Brothers", type:'Pittsburgh Classic',
+          desc:'Legendary sandwich with fries AND coleslaw stuffed inside. A Pittsburgh rite of passage.',
+          cost:18, costLabel:'$14-22', stars:'★★★★☆', duration:'45 min', time:'1:00 PM', xp:5, cat:'food',
+          address:'46 18th St, Pittsburgh, PA 15222', url:'https://www.primantibros.com'},
+        {id:'fig-ash', icon:'🔥', name:'Fig & Ash', type:'Birthday Dinner',
+          desc:'Wood-fired, seasonal, acclaimed. Outstanding cocktails. Reserve 2+ weeks ahead.',
+          cost:65, costLabel:'$55-80/person', stars:'★★★★★', duration:'2 hrs', time:'5:00 PM', xp:9, cat:'food',
+          address:'514 E Ohio St, Pittsburgh, PA 15212', url:'https://www.figandashpittsburgh.com'},
+        {id:'altius', icon:'🥂', name:'Altius — Mt. Washington', type:'View Dining',
+          desc:'THE birthday moment. Fine dining overlooking Pittsburgh glittering below. Book 3+ weeks ahead.',
+          cost:85, costLabel:'$70-110/person', stars:'★★★★★', duration:'2.5 hrs', time:'7:30 PM', xp:10, cat:'food',
+          address:'1230 Grandview Ave, Pittsburgh, PA 15211', url:'https://www.altiuspgh.com'}
+      ]},
+      {name:'Evening & Karaoke', color:'#5b8df5', items:[
+        {id:'duquesne', icon:'🚡', name:'Duquesne Incline', type:'Iconic Experience',
+          desc:'Historic cable car up Mt. Washington — panoramic Pittsburgh skyline. Perfect golden-hour stop.',
+          cost:5, costLabel:'$5 RT', stars:'★★★★★', duration:'45 min', time:'6:00 PM', xp:8, cat:'evening',
+          address:'1197 W Carson St, Pittsburgh, PA 15219', url:'https://www.duquesneincline.org'},
+        {id:'wanna-karaoke', icon:'🎤', name:'Wanna Karaoke', type:'Karaoke Bar',
+          desc:'Karaoke inside Tequila Cowboy on the North Shore. Big song list, fun crowd.',
+          cost:25, costLabel:'$20-40/person', stars:'★★★★☆', duration:'2+ hrs', time:'8:00 PM', xp:7, cat:'evening',
+          address:'380 North Shore Dr, Pittsburgh, PA 15212', url:'https://www.tequilacowboypgh.com'},
+        {id:'hi-sound', icon:'🎵', name:'Hi Sound Karaoke', type:'Private Karaoke Rooms',
+          desc:'Private karaoke rooms in Squirrel Hill with leather sofas and JBL sound.',
+          cost:35, costLabel:'$25-50/room', stars:'★★★☆☆', duration:'2 hrs', time:'7:00 PM', xp:6, cat:'evening',
+          address:'6316 Forbes Ave, Pittsburgh, PA 15217', url:'https://www.facebook.com/HiSoundKaraoke'}
+      ]}
+    ]
+  },
+
+  balt: {
+    name:'Baltimore', emoji:'🦀', tagline:'Fells Point & the Harbor',
+    color:'#ff6b35', cls:'balt', tcls:'on-balt', bcls:'cb-balt',
+    drive:'~3 hrs from Lock Haven', gas:26,
+    parking:[
+      {badge:'⭐ BEST', name:'Pier 5 / Harbor Garage', note:'Best Inner Harbor access, walk to aquarium & Fells Point', cost:'$12-18/day'},
+      {badge:'💰 CHEAP', name:'Little Italy Lots', note:'Walking distance to all Fells Point spots', cost:'$8-12/day'},
+      {badge:'📱 SMART', name:'SpotHero App', note:'Pre-book for weekend savings anywhere in the city', cost:'$8-15/day'},
+      {badge:'💚 FREE', name:'Thames / Broadway St', note:'Free street parking after 8pm on most Fells Point blocks', cost:'Free eves'}
+    ],
+    presets:{
+      p5:{label:'5/10', stars:'★★★☆☆', name:'Harbor Stroll', tagline:'Chill waterfront vibes', price:'~$70', ids:['inner-harbor','nicks-fish','cats-eye']},
+      p8:{label:'8/10', stars:'★★★★☆', name:'City Birthday', tagline:'Art, crabs & nightlife', price:'~$120', ids:['visionary-art','inner-harbor','ampersea','broadway-ktv']},
+      p10:{label:'10/10', stars:'★★★★★', name:'Full Baltimore', tagline:'The whole damn experience', price:'~$165', ids:['national-aquarium','visionary-art','nicks-fish','ampersea','broadway-ktv']}
+    },
+    mapCoords:{
+      home:{x:.06,y:.14},
+      stops:[
+        {id:'national-aquarium',name:'Aquarium',x:.50,y:.36},{id:'inner-harbor',name:'Harbor',x:.47,y:.40},
+        {id:'visionary-art',name:'AVAM',x:.44,y:.50},{id:'top-of-world',name:'Top World',x:.52,y:.38},
+        {id:'nicks-fish',name:"Nick's",x:.36,y:.60},{id:'ampersea',name:'Ampersea',x:.68,y:.47},
+        {id:'balt-seafood',name:'Seafood Boil',x:.74,y:.43},{id:'horse-saloon',name:'Horse',x:.65,y:.54},
+        {id:'broadway-ktv',name:'Broadway KTV',x:.71,y:.49},{id:'cats-eye',name:"Cat's Eye",x:.69,y:.51}
+      ]
+    },
+    categories:[
+      {name:'Morning & Daytime', color:'#42d9a0', items:[
+        {id:'national-aquarium', icon:'🐠', name:'National Aquarium', type:'World-Class Attraction',
+          desc:'Sharks, dolphins, jellyfish, rainforest exhibit and 4D theater. One of the best in the US.',
+          cost:42, costLabel:'$38-45', stars:'★★★★★', duration:'2-3 hrs', time:'9:30 AM', xp:9, cat:'activity',
+          address:'501 E Pratt St, Baltimore, MD 21202', url:'https://www.aqua.org'},
+        {id:'inner-harbor', icon:'⚓', name:'Inner Harbor Waterfront', type:'Free Stroll',
+          desc:'Free walk with historic ships, street performers and endless waterfront photo ops.',
+          cost:0, costLabel:'Free', stars:'★★★★☆', duration:'1 hr', time:'11:00 AM', xp:6, cat:'activity',
+          address:'Inner Harbor, Baltimore, MD 21202', url:'https://baltimore.org/neighborhoods/inner-harbor'},
+        {id:'visionary-art', icon:'🎨', name:'American Visionary Art Museum', type:'Museum',
+          desc:'Folk and outsider art — one of the most unique museums anywhere. Gift shop is unreal.',
+          cost:20, costLabel:'$18-22', stars:'★★★★★', duration:'1.5 hrs', time:'10:00 AM', xp:8, cat:'activity',
+          address:'800 Key Hwy, Baltimore, MD 21230', url:'https://www.avam.org'},
+        {id:'top-of-world', icon:'🌆', name:'Top of the World Deck', type:'Observation Deck',
+          desc:'Panoramic 360° views of Baltimore from the 27th floor. Gorgeous late-afternoon light.',
+          cost:8, costLabel:'$6-10', stars:'★★★★☆', duration:'45 min', time:'12:00 PM', xp:7, cat:'activity',
+          address:'401 E Pratt St 27th Fl, Baltimore, MD 21202', url:'https://www.viewbaltimore.org'}
+      ]},
+      {name:'🦀 Food & Drinks', color:'#e85c6a', items:[
+        {id:'nicks-fish', icon:'🦀', name:"Nick's Fish House", type:'Seafood',
+          desc:'Best cream of crab soup in Baltimore. Killer crab cakes on a waterfront deck.',
+          cost:45, costLabel:'$35-55/person', stars:'★★★★★', duration:'1.5 hrs', time:'12:30 PM', xp:8, cat:'food',
+          address:'2600 Insulator Dr, Baltimore, MD 21230', url:'https://www.nicksfishhouse.com'},
+        {id:'ampersea', icon:'🍽️', name:'Ampersea', type:'Birthday Dinner',
+          desc:'Fells Point harbor gem — mussels, crab pretzel, fresh seafood. Staff go all out for birthdays.',
+          cost:65, costLabel:'$55-80/person', stars:'★★★★★', duration:'2 hrs', time:'6:00 PM', xp:9, cat:'food',
+          address:'1417 Thames St, Baltimore, MD 21231', url:'https://www.amperseabaltimore.com'},
+        {id:'balt-seafood', icon:'🦞', name:'Baltimore Seafood Boil', type:'Cajun Seafood Boil',
+          desc:'Lobster, king crab and shrimp in garlic butter. Messy, loud, completely unforgettable.',
+          cost:60, costLabel:'$45-75/person', stars:'★★★★★', duration:'2 hrs', time:'6:30 PM', xp:8, cat:'food',
+          address:'2324 Boston St, Baltimore, MD 21224', url:'https://www.baltimoreseafoodboil.com'},
+        {id:'horse-saloon', icon:'🍺', name:"The Horse You Came In On", type:'Bar + Live Music',
+          desc:"Baltimore's oldest bar in Fells Point. Live music every night. Where Poe had his last drink.",
+          cost:25, costLabel:'$15-35/person', stars:'★★★★☆', duration:'2 hrs', time:'8:00 PM', xp:7, cat:'food',
+          address:'1626 Thames St, Baltimore, MD 21231', url:'https://www.thehorsebaltimore.com'}
+      ]},
+      {name:'🎤 Evening & Karaoke', color:'#a78bfa', items:[
+        {id:'broadway-ktv', icon:'🎤', name:'Broadway KTV & Karaoke', type:'Private Karaoke',
+          desc:'Private rooms in Fells Point — hot pot + karaoke, huge K-pop/English/90s library.',
+          cost:35, costLabel:'$25-50/room', stars:'★★★★★', duration:'2-3 hrs', time:'8:30 PM', xp:9, cat:'evening',
+          address:'711 S Broadway, Baltimore, MD 21231', url:'https://www.facebook.com/BroadwayKTV'},
+        {id:'cats-eye', icon:'🎸', name:"Cat's Eye Pub", type:'Live Music Bar',
+          desc:'Legendary Fells Point music bar. Bands every single night. Just music, Guinness, and good people.',
+          cost:15, costLabel:'$10-25/person', stars:'★★★★★', duration:'2 hrs', time:'9:00 PM', xp:8, cat:'evening',
+          address:'1730 Thames St, Baltimore, MD 21231', url:'https://www.catseyepub.com'}
+      ]}
+    ]
+  },
+
+  stc: {
+    name:'State College', emoji:'🎓', tagline:'En Route Home — Penn State Territory',
+    color:'#a78bfa', cls:'stc', tcls:'on-stc', bcls:'cb-stc',
+    drive:'~1 hr from Lock Haven (on the way home)', gas:8,
+    parking:[
+      {badge:'🆓 FREE', name:'Beaver Ave Garage', note:'Free after 5pm and all weekend', cost:'Free weekends'},
+      {badge:'💚 BEST', name:'Allen St Meters', note:'Free on Sundays all day', cost:'Free Sun'},
+      {badge:'⭐ EASY', name:'Penn State Campus Lots', note:'Most campus lots free Saturday-Sunday', cost:'Free weekends'}
+    ],
+    presets:{
+      p5:{label:'5/10', stars:'★★★☆☆', name:'Quick Stop', tagline:'Drinks + late night bite', price:'~$40', ids:['corner-room','the-hub']},
+      p8:{label:'8/10', stars:'★★★★☆', name:'College Night Out', tagline:'Karaoke + good food', price:'~$70', ids:['the-hub','viva-la-peace','champs']},
+      p10:{label:'10/10', stars:'★★★★★', name:'Full STC Sendoff', tagline:'End the trip right', price:'~$90', ids:['mount-nittany','creamery','viva-la-peace','zelenkys']}
+    },
+    mapCoords:{
+      home:{x:.86,y:.14},
+      stops:[
+        {id:'corner-room',name:'Corner Room',x:.48,y:.45},{id:'the-hub',name:'The Hub',x:.50,y:.48},
+        {id:'viva-la-peace',name:'Viva',x:.45,y:.52},{id:'champs',name:"Champ's",x:.52,y:.42},
+        {id:'zelenkys',name:"Zelenky's",x:.44,y:.55},{id:'mount-nittany',name:'Mt. Nittany',x:.62,y:.28},
+        {id:'creamery',name:'Creamery',x:.55,y:.35}
+      ]
+    },
+    categories:[
+      {name:'Daytime', color:'#42d9a0', items:[
+        {id:'mount-nittany', icon:'⛰️', name:'Mount Nittany Hike', type:'Outdoor Activity',
+          desc:'Easy 5-mile loop with panoramic views of Happy Valley. Perfect before hitting downtown.',
+          cost:0, costLabel:'Free', stars:'★★★★★', duration:'2-3 hrs', time:'2:00 PM', xp:8, cat:'activity',
+          address:'Mount Nittany Trail, State College, PA 16803', url:'https://www.mountnittanyconservancy.org'},
+        {id:'creamery', icon:'🍦', name:'Penn State Creamery', type:'Campus Icon',
+          desc:"World-famous Peachy Paterno and BFFS ice cream. Non-negotiable Penn State stop.",
+          cost:8, costLabel:'$5-10', stars:'★★★★★', duration:'30 min', time:'3:00 PM', xp:6, cat:'activity',
+          address:'119 Food Science Bldg, University Park, PA 16802', url:'https://creamery.psu.edu'}
+      ]},
+      {name:'Food & Drinks', color:'#e85c6a', items:[
+        {id:'corner-room', icon:'🍔', name:'The Corner Room', type:'Classic Diner',
+          desc:'State College landmark since 1926 — great burgers, milkshakes, late-night fare on College Ave.',
+          cost:20, costLabel:'$15-28/person', stars:'★★★★☆', duration:'1 hr', time:'8:00 PM', xp:6, cat:'food',
+          address:'100 W College Ave, State College, PA 16801', url:'https://www.thecornerroom.com'},
+        {id:'viva-la-peace', icon:'🍕', name:'Viva La Peace', type:'Pizza & Bar',
+          desc:'Late-night pizza, cocktails and good energy on Allen St. Great for winding down after a big day.',
+          cost:25, costLabel:'$18-35/person', stars:'★★★★☆', duration:'1.5 hrs', time:'9:00 PM', xp:6, cat:'food',
+          address:'131 S Allen St, State College, PA 16801', url:'https://www.vivlapeacerestaurant.com'},
+        {id:'champs', icon:'🍺', name:"Champ's Sports Bar", type:'Sports Bar',
+          desc:'Big screens, great wings and a lively sports-bar atmosphere. Perfect group decompression stop.',
+          cost:22, costLabel:'$18-30/person', stars:'★★★★☆', duration:'1.5 hrs', time:'8:30 PM', xp:5, cat:'food',
+          address:'114 W College Ave, State College, PA 16801', url:'https://www.champsdowntown.com'}
+      ]},
+      {name:'Evening', color:'#a78bfa', items:[
+        {id:'zelenkys', icon:'🎤', name:"Zelenky's Bar", type:'Bar + Karaoke Nights',
+          desc:'State College bar with fun late-night vibes and karaoke nights that pack out. Great trip closer.',
+          cost:20, costLabel:'$15-30/person', stars:'★★★★☆', duration:'2+ hrs', time:'10:00 PM', xp:7, cat:'evening',
+          address:'112 S Allen St, State College, PA 16801', url:'https://www.facebook.com/Zelenkys'},
+        {id:'the-hub', icon:'🎱', name:'The Hub', type:'Bar + Games',
+          desc:'Multi-level bar with pool tables, arcade games, lively college atmosphere. Great group stop.',
+          cost:15, costLabel:'$10-25/person', stars:'★★★★☆', duration:'1.5 hrs', time:'9:30 PM', xp:5, cat:'evening',
+          address:'127 W Beaver Ave, State College, PA 16801', url:'https://www.thehubsc.com'}
+      ]}
+    ]
+  }
+};
+
+// ═══════════════════════════════════
+// STATE
+// ═══════════════════════════════════
+var S = { city:null, sel:new Set(), votes:{} };
+
+// ═══════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════
+function allItems(cid) {
+  var out=[]; var c=CITIES[cid]; if(!c) return out;
+  c.categories.forEach(function(cat){cat.items.forEach(function(i){out.push(i);});});
+  return out;
+}
+function hexRgb(h){ return parseInt(h.slice(1,3),16)+','+parseInt(h.slice(3,5),16)+','+parseInt(h.slice(5,7),16); }
+
+// ═══════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════
+function goHome(){
+  document.getElementById('hero').style.display='flex';
+  document.getElementById('app').classList.remove('on');
+  S.city=null; S.sel.clear(); S.votes={};
+}
+
+function openCity(id){
+  if(!CITIES[id]) return;
+  S.city=id; S.sel.clear(); S.votes={};
+  document.getElementById('hero').style.display='none';
+  document.getElementById('app').classList.add('on');
+  ['pgh','balt','stc'].forEach(function(c){
+    var t=document.getElementById('tab-'+c);
+    if(t) t.className='ctab';
+  });
+  document.getElementById('tab-'+id).className='ctab '+CITIES[id].tcls;
+  renderCity(id);
+  refreshSummary();
+  setTimeout(redrawMap,120);
+}
+
+// ═══════════════════════════════════
+// RENDER CITY
+// ═══════════════════════════════════
+function renderCity(id){
+  var c=CITIES[id]; var el=document.getElementById('city-content'); var h='';
+  // Banner
+  h+='<div class="cban '+c.bcls+'"><div class="cbtop"><div>';
+  h+='<div class="cbname">'+c.emoji+' '+c.name+'</div>';
+  h+='<div class="cbsub">'+c.tagline+' &middot; '+c.drive+'</div>';
+  h+='<div class="cbbadges">';
+  h+='<span class="cbbadge">🚗 Gas ~$'+c.gas+'/person</span>';
+  h+='<span class="cbbadge">🅿️ Parking tips in sidebar</span>';
+  h+='<span class="cbbadge">👥 Group: 2-4 people</span>';
+  h+='</div></div><div style="font-size:44px;flex-shrink:0">'+c.emoji+'</div>';
+  h+='</div></div>';
+  // Presets
+  h+='<div class="stitle">✦ Curated Itineraries</div><div class="pbar">';
+  Object.keys(c.presets).forEach(function(k){
+    var p=c.presets[k];
+    h+='<button class="pbtn" onclick="applyPreset(\''+id+'\',\''+k+'\')">';
+    h+='<div class="plabel"><span class="pstars">'+p.stars+'</span> '+p.label+'</div>';
+    h+='<div class="pname">'+p.name+'</div>';
+    h+='<div class="ptag">'+p.tagline+'</div>';
+    h+='<div class="pprice">'+p.price+'</div></button>';
+  });
+  h+='</div>';
+  // Stop categories
+  h+='<div class="stitle">Build Your Day &mdash; Choose Stops</div>';
+  h+='<div class="msec">';
+  c.categories.forEach(function(cat){
+    h+='<div class="mcat">';
+    h+='<div class="cathdr"><span class="catdot" style="background:'+cat.color+'"></span>'+cat.name+'</div>';
+    h+='<div class="mgrid">';
+    cat.items.forEach(function(item){ h+=buildCard(item,c); });
+    h+='</div></div>';
+  });
+  h+='</div>';
+  el.innerHTML=h;
+}
+
+function buildCard(item,city){
+  var isSel=S.sel.has(item.id);
+  if(!S.votes[item.id]) S.votes[item.id]={up:0,dn:0,mine:null};
+  var v=S.votes[item.id];
+  var sc=isSel?' sel '+city.cls+'-m':'';
+  var maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(item.address);
+  var site=item.url||maps;
+  var desc=item.desc.split('.')[0];
+  var uc=v.mine==='up'?' up':''; var dc=v.mine==='dn'?' dn':'';
+  var id=item.id;
+  return '<div class="card'+sc+'" id="mc-'+id+'" onclick="handleCardClick(event,\''+id+'\')">'    +'<div class="ctop">'    +'<span class="cicon">'+item.icon+'</span>'    +'<div class="cinfo"><div class="cname">'+item.name+'</div><div class="ctype">'+item.type+'</div></div>'    +'<div class="cchk">'+(isSel?'✓':'')+'</div>'    +'</div>'    +'<div class="cdesc">'+desc+'</div>'    +'<div class="cmeta">'    +'<span class="cbadge">🕐 '+item.time+'</span>'    +'<span class="cbadge">⏱ '+item.duration+'</span>'    +'<span class="cstars">'+item.stars+'</span>'    +'<span class="ccost">'+item.costLabel+'</span>'    +'</div>'    +'<div class="cacts" onclick="event.stopPropagation()">'    +'<button class="vbtn'+uc+'" onclick="doVote(\''+id+'\',\'up\')">👍 <span id="vu-'+id+'">'+v.up+'</span></button>'    +'<button class="vbtn'+dc+'" onclick="doVote(\''+id+'\',\'dn\')">👎 <span id="vd-'+id+'">'+v.dn+'</span></button>'    +'<a class="clink" href="'+site+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">🌐 Visit</a>'    +'<a class="clink" href="'+maps+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 Map</a>'    +'<button class="abtn" onclick="toggleStop(\''+id+'\')">'    +(isSel?'✓ Added':'+ Add')+'</button>'    +'</div></div>';
+}
+
+function handleCardClick(e,id){
+  if(e.target.tagName==='A'||e.target.tagName==='BUTTON') return;
+  toggleStop(id);
+}
+
+// Interactions handled via inline onclick handlers
+
+// ═══════════════════════════════════
+// TOGGLE STOP
+// ═══════════════════════════════════
+var _ut=null;
+function toggleStop(id){
+  if(!S.city) return;
+  if(S.sel.has(id)) S.sel.delete(id); else S.sel.add(id);
+  var city=CITIES[S.city]; var isSel=S.sel.has(id);
+  var card=document.getElementById('mc-'+id);
+  if(card){
+    card.className='card'+(isSel?' sel '+city.cls+'-m':'');
+    var chk=card.querySelector('.cchk'); if(chk) chk.textContent=isSel?'✓':'';
+    var ab=card.querySelector('.abtn'); if(ab) ab.textContent=isSel?'✓ Added':'+ Add';
+  }
+  refreshSummary(); redrawMap();
+  clearTimeout(_ut); _ut=setTimeout(pushURL,400);
+}
+
+// ═══════════════════════════════════
+// PRESET
+// ═══════════════════════════════════
+function applyPreset(cid,key){
+  var city=CITIES[cid]; if(!city||!city.presets[key]) return;
+  S.sel.clear();
+  city.presets[key].ids.forEach(function(id){S.sel.add(id);});
+  renderCity(cid); refreshSummary(); setTimeout(redrawMap,80);
+  document.querySelectorAll('.pbtn').forEach(function(b){
+    b.classList.toggle('active',b.dataset.city===cid&&b.dataset.preset===key);
+  });
+}
+
+// ═══════════════════════════════════
+// VOTE
+// ═══════════════════════════════════
+function doVote(id,dir){
+  if(!S.votes[id]) S.votes[id]={up:0,dn:0,mine:null};
+  var v=S.votes[id];
+  if(v.mine===dir){v[dir]--;v.mine=null;}
+  else{if(v.mine)v[v.mine]--;v[dir]++;v.mine=dir;}
+  var ue=document.getElementById('vu-'+id); if(ue) ue.textContent=v.up;
+  var de=document.getElementById('vd-'+id); if(de) de.textContent=v.dn;
+  var card=document.getElementById('mc-'+id);
+  if(card){
+    var bs=card.querySelectorAll('[data-vote]');
+    if(bs[0]) bs[0].className='vbtn'+(v.mine==='up'?' up':'');
+    if(bs[1]) bs[1].className='vbtn'+(v.mine==='dn'?' dn':'');
+  }
+  refreshVotes();
+}
+
+// ═══════════════════════════════════
+// SUMMARY + COST + ITINERARY
+// ═══════════════════════════════════
+function refreshSummary(){
+  var c=CITIES[S.city]; if(!c) return;
+  var items=allItems(S.city);
+  var sel=items.filter(function(i){return S.sel.has(i.id);});
+  sel.sort(function(a,b){return a.time<b.time?-1:a.time>b.time?1:0;});
+  var act=0,food=0,xp=0;
+  sel.forEach(function(i){
+    if(i.cat==='food'||i.cat==='evening') food+=i.cost; else act+=i.cost;
+    xp+=i.xp;
+  });
+  var park=sel.length>0?12:0;
+  var total=act+food+c.gas+park;
+  document.getElementById('rcity').textContent=c.emoji+' '+c.name;
+  document.getElementById('rsub').textContent=sel.length+' stop'+(sel.length!==1?'s':'')+' selected';
+  document.getElementById('c-act').textContent='$'+act;
+  document.getElementById('c-food').textContent='$'+food;
+  document.getElementById('c-gas').textContent='$'+c.gas;
+  document.getElementById('c-park').textContent=park>0?'~$'+park:'$0';
+  document.getElementById('c-total').textContent='$'+total;
+  var pct=Math.min(100,Math.round(xp/80*100));
+  document.getElementById('xp-score').textContent=xp>0?xp+'xp':'—';
+  document.getElementById('xp-bar').style.width=pct+'%';
+  var tg=document.getElementById('xp-tags'); tg.innerHTML='';
+  if(sel.some(function(i){return i.cat==='activity';})) tg.innerHTML+='<span class="xptag">🎭 Activities</span>';
+  if(sel.some(function(i){return i.cat==='food';})) tg.innerHTML+='<span class="xptag">🍽️ Food</span>';
+  if(sel.some(function(i){return i.cat==='evening';})) tg.innerHTML+='<span class="xptag">🎤 Nightlife</span>';
+  // Itinerary
+  var il=document.getElementById('itin-list');
+  if(sel.length===0){
+    il.innerHTML='<div class="empty"><span class="emptyico">🗺️</span><p class="emptytxt">Tap any stop to add it.</p></div>';
+  } else {
+    var h='';
+    sel.forEach(function(item,i){
+      h+='<div class="iitem">';
+      h+='<div class="inum">'+(i+1)+'</div>';
+      h+='<div class="ibody"><div class="iname">'+item.icon+' '+item.name+'</div>';
+      h+='<div class="imeta">'+item.time+' &middot; '+item.duration+' &middot; '+item.costLabel+'</div></div>';
+      h+='<button class="irm" onclick="toggleStop(\''+item.id+'\')">✕</button>';
+      h+='</div>';
+    });
+    il.innerHTML=h;
+  }
+  // Parking
+  var pp=document.getElementById('park-panel'); var pl=document.getElementById('park-list');
+  if(sel.length>0){
+    pp.style.display='block'; var ph='';
+    c.parking.forEach(function(p){
+      ph+='<div class="parkitem">';
+      ph+='<span class="pbadge">'+p.badge+'</span>';
+      ph+='<span class="ptext"><strong>'+p.name+'</strong><br>'+p.note+'</span>';
+      ph+='<span class="pcost">'+p.cost+'</span>';
+      ph+='</div>';
+    });
+    pl.innerHTML=ph;
+  } else { pp.style.display='none'; }
+  refreshVotes();
+}
+
+function refreshVotes(){
+  var vp=document.getElementById('vote-panel'); var vl=document.getElementById('vote-list');
+  if(!S.city){vp.style.display='none';return;}
+  var voted=allItems(S.city).filter(function(i){var v=S.votes[i.id];return v&&(v.up+v.dn)>0;});
+  if(!voted.length){vp.style.display='none';return;}
+  vp.style.display='block'; var h='';
+  voted.forEach(function(item){
+    var v=S.votes[item.id]; var tot=v.up+v.dn;
+    var pct=tot>0?Math.round(v.up/tot*100):0;
+    h+='<div class="vrow">';
+    h+='<span class="vname">'+item.icon+' '+item.name+'</span>';
+    h+='<div class="vtrack"><div class="vfill" style="width:'+pct+'%"></div></div>';
+    h+='<span class="vnum">'+v.up+'/'+tot+'</span>';
+    h+='</div>';
+  });
+  vl.innerHTML=h;
+}
+
+// ═══════════════════════════════════
+// MAP
+// ═══════════════════════════════════
+function redrawMap(){
+  var cv=document.getElementById('map-canvas'); if(!cv) return;
+  var parent=cv.parentElement;
+  var w=parent?parent.offsetWidth:cv.offsetWidth;
+  var h=parent?parent.offsetHeight:cv.offsetHeight;
+  if(w<2||h<2){setTimeout(redrawMap,100);return;}
+  cv.width=w; cv.height=h;
+  var ctx=cv.getContext('2d');
+  ctx.fillStyle='#0f0f1c'; ctx.fillRect(0,0,w,h);
+  ctx.strokeStyle='rgba(255,255,255,.035)'; ctx.lineWidth=1;
+  for(var gx=0;gx<=w;gx+=40){ctx.beginPath();ctx.moveTo(gx,0);ctx.lineTo(gx,h);ctx.stroke();}
+  for(var gy=0;gy<=h;gy+=40){ctx.beginPath();ctx.moveTo(0,gy);ctx.lineTo(w,gy);ctx.stroke();}
+  if(!S.city){
+    ctx.fillStyle='rgba(201,169,110,.3)'; ctx.font='11px monospace'; ctx.textAlign='center';
+    ctx.fillText('Select a city to see the route map',w/2,h/2); return;
+  }
+  var city=CITIES[S.city]; var mc=city.mapCoords; var rgb=hexRgb(city.color);
+  var hx=mc.home.x*w,hy=mc.home.y*h;
+  ctx.beginPath();ctx.arc(hx,hy,5,0,Math.PI*2);ctx.fillStyle='#42d9a0';ctx.fill();
+  ctx.fillStyle='rgba(66,217,160,.7)'; ctx.font='9px monospace'; ctx.textAlign='left';
+  ctx.fillText('Lock Haven',hx+8,hy+3);
+  var selC=mc.stops.filter(function(s){return S.sel.has(s.id);});
+  if(selC.length>0){
+    var pts=[{x:hx,y:hy}].concat(selC.map(function(s){return{x:s.x*w,y:s.y*h};}));
+    ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);
+    for(var ri=1;ri<pts.length;ri++) ctx.lineTo(pts[ri].x,pts[ri].y);
+    ctx.strokeStyle='rgba('+rgb+',.45)'; ctx.lineWidth=2;
+    ctx.setLineDash([5,5]); ctx.stroke(); ctx.setLineDash([]);
+  }
+  mc.stops.forEach(function(s){
+    if(S.sel.has(s.id)) return;
+    ctx.beginPath();ctx.arc(s.x*w,s.y*h,3,0,Math.PI*2);
+    ctx.fillStyle='rgba(255,255,255,.12)';ctx.fill();
+  });
+  selC.forEach(function(s){
+    var sx=s.x*w,sy=s.y*h;
+    ctx.beginPath();ctx.arc(sx,sy,6,0,Math.PI*2);ctx.fillStyle=city.color;ctx.fill();
+    ctx.beginPath();ctx.arc(sx,sy,10,0,Math.PI*2);
+    ctx.strokeStyle='rgba('+rgb+',.3)'; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.fillStyle=city.color; ctx.font='bold 9px monospace'; ctx.textAlign='center';
+    ctx.fillText(s.name,sx,sy-13);
+  });
+  var lbl=document.getElementById('map-label');
+  if(lbl) lbl.textContent=selC.length>0?(selC.length+' stop'+(selC.length!==1?'s':'')+' · '+city.drive):'Select stops to see route';
+}
+
+// ═══════════════════════════════════
+// SHARE + PRINT
+// ═══════════════════════════════════
+function encodeS(){
+  try{
+    var vArr=[];
+    Object.keys(S.votes).forEach(function(id){
+      var v=S.votes[id]; if((v.up+v.dn)>0) vArr.push(id+':'+v.up+':'+v.dn);
+    });
+    return btoa(encodeURIComponent(JSON.stringify({c:S.city,s:Array.from(S.sel).join(','),v:vArr.join(';')})));
+  }catch(e){return '';}
+}
+function decodeS(raw){
+  try{
+    var p=JSON.parse(decodeURIComponent(atob(raw)));
+    var r={city:p.c,sel:new Set(),votes:{}};
+    if(p.s) p.s.split(',').filter(Boolean).forEach(function(id){r.sel.add(id);});
+    if(p.v) p.v.split(';').filter(Boolean).forEach(function(e){
+      var pts=e.split(':'); r.votes[pts[0]]={up:+pts[1]||0,dn:+pts[2]||0,mine:null};
+    });
+    return r;
+  }catch(e){return null;}
+}
+function pushURL(){
+  try{var h=encodeS(); if(h) history.replaceState(null,'','#'+h);}catch(e){}
+}
+
+function doShare(){
+  if(!S.city){toast('Choose a city first!');return;}
+  var url=window.location.href.split('#')[0]+'#'+encodeS();
+  var b=document.getElementById('share-body');
+  b.innerHTML='<p style="font-family:monospace;font-size:10px;color:var(--mu);margin-bottom:8px">YOUR TRIP LINK</p>'
+    +'<div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:10px 12px;font-family:monospace;font-size:11px;color:var(--ac);word-break:break-all;margin-bottom:14px">'+url+'</div>'
+    +'<button id="cpybtn" style="width:100%;padding:12px;background:var(--ac);border:none;border-radius:10px;font-family:Syne,sans-serif;font-weight:800;font-size:13px;color:#0d0d14;cursor:pointer">Copy Link</button>';
+  document.getElementById('share-modal').classList.add('on');
+  document.getElementById('cpybtn').onclick=function(){
+    if(navigator.clipboard) navigator.clipboard.writeText(url).then(function(){toast('✓ Link copied!');document.getElementById('share-modal').classList.remove('on');});
+    else toast('Copy the link above!');
+  };
+}
+
+function doPrint(){
+  if(!S.city||S.sel.size===0){toast('Add some stops first!');return;}
+  var c=CITIES[S.city];
+  var sel=allItems(S.city).filter(function(i){return S.sel.has(i.id);});
+  sel.sort(function(a,b){return a.time<b.time?-1:a.time>b.time?1:0;});
+  var h='<div class="prtitle">✦ Sonia\'s 24th</div>';
+  h+='<div class="prsub">A Golden Affair &middot; '+c.name+'</div>';
+  sel.forEach(function(item,i){
+    h+='<div class="prstop"><div class="prnum">'+(i+1)+'</div><div>';
+    h+='<div class="prsname">'+item.icon+' '+item.name+'</div>';
+    h+='<div class="prsdesc">'+item.desc+'</div>';
+    h+='<div class="prsmeta">';
+    h+='<span class="prm">🕐 '+item.time+'</span>';
+    h+='<span class="prm">⏱ '+item.duration+'</span>';
+    h+='<span class="prm">💵 '+item.costLabel+'</span>';
+    if(item.url) h+='<a href="'+item.url+'" target="_blank" style="color:var(--ac);font-family:monospace;font-size:10px">🌐 Website</a>';
+    h+='</div></div></div>';
+  });
+  document.getElementById('print-body').innerHTML=h;
+  document.getElementById('print-overlay').classList.add('on');
+}
+
+// ═══════════════════════════════════
+// TOAST
+// ═══════════════════════════════════
+var _tt=null;
+function toast(msg){
+  var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on');
+  clearTimeout(_tt); _tt=setTimeout(function(){t.classList.remove('on');},2800);
+}
+
+// ═══════════════════════════════════
+// INIT
+// ═══════════════════════════════════
+window.addEventListener('resize',function(){if(S.city) redrawMap();});
+
+(function(){
+  var hash=window.location.hash;
+  if(hash&&hash.length>4){
+    var d=decodeS(hash.slice(1));
+    if(d&&CITIES[d.city]){
+      S.city=d.city; S.sel=d.sel; S.votes=d.votes;
+      document.getElementById('hero').style.display='none';
+      document.getElementById('app').classList.add('on');
+      ['pgh','balt','stc'].forEach(function(c){document.getElementById('tab-'+c).className='ctab';});
+      document.getElementById('tab-'+S.city).className='ctab '+CITIES[S.city].tcls;
+      renderCity(S.city); refreshSummary(); setTimeout(redrawMap,120);
+      toast('Trip loaded — '+CITIES[S.city].name+'!');
+      return;
+    }
+  }
+})();
+
+// Sparkles
+(function(){
+  var c=document.getElementById('hsparks'); if(!c) return;
+  for(var i=0;i<20;i++){
+    var s=document.createElement('div'); s.className='spark';
+    s.style.cssText='left:'+Math.random()*100+'%;top:'+(30+Math.random()*55)+'%;'
+      +'animation-duration:'+(3+Math.random()*5)+'s;animation-delay:'+(Math.random()*7)+'s;'
+      +'width:'+(1+Math.random()*2)+'px;height:'+(1+Math.random()*2)+'px;'
+      +'opacity:'+(0.3+Math.random()*0.5)+';';
+    c.appendChild(s);
+  }
+})();
+</script></body></html>
